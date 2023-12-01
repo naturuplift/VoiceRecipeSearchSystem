@@ -55,6 +55,6 @@ License
 This project is licensed under the MIT License. See the [LICENSE][MIT] file for details.
 
 [project-app]: <>
-[project-code]: <
-[state-flow]: <>
-[MIT]: <>
+[project-code]: <https://github.com/naturuplift/bootcamp-project-one/blob/main/index.html>
+[state-flow]: <https://github.com/naturuplift/bootcamp-project-one/blob/main/assets/img/Voice%20Language%20Translation%20State%20Diagram%20v2.png>
+[MIT]: <https://github.com/naturuplift/bootcamp-project-one/blob/main/LICENSE>
