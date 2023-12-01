@@ -1,22 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voice Recipe Search</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <title>App in Action</title>
+
+    <!-- import the webpage's stylesheet -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    
     <link rel="stylesheet" href="./assets/css/styles.css">
     <link rel="stylesheet" href="./assets/css/reset.css">
-</head>
-<body>
-    <h1>Voice Recipe Search</h1>
-    <p>Click the microphone and say, "Find recipes with [ingredient]."</p>
-    <button id="startBtn">Start Voice Search</button>
-    <div id="result"></div>
+  </head>
+
+  <!-- Body -->
+  <body>
+    <h2>
+      1: Record
+    </h2>
+    <p>
+      <button id="record" enabled>Record audio</button>
+      <button id="stop" enabled>Stop</button>
+    </p>
+    <h2>
+      2: Verify
+    </h2>
+    <p>
+      <audio id="audio"/>
+    </p>
+    <p>
+      <a id="download"></a>
+    </p>
+    <h2>
+      3: Send to Wit
+    </h2>
+    <p>
+      <button id="send" enabled>Send</button>
+    </p>
+    <p id="response">...</p>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="./assets/script/script.js"></script>
-</body>
+
+    <footer class="footer">
+      <h2>Made with ❤️ by Samantha, Maika & Arnaldo</h2>
+      <p>
+          &copy; 2023 Natural Language Solution.
+      </p>
+  </footer>
+  </body>
 </html>
