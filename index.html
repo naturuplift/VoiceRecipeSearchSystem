@@ -15,29 +15,44 @@
 
   <!-- Body -->
   <body>
+
     <h2>
       1: Record
     </h2>
+    <!-- To start/stop audio recording -->
     <p>
-      <button id="record" enabled>Record audio</button>
-      <button id="stop" enabled>Stop</button>
+      <button id="record-btn" enabled>Record audio</button>
+      <button id="stop-btn" enabled>Stop</button>
     </p>
+    <!-- To verify audio recording -->
     <h2>
       2: Verify
     </h2>
+    <p>
+      <button id="verify-btn" enabled>Verify audio</button>
+    </p>
     <p>
       <audio id="audio"/>
     </p>
     <p>
       <a id="download"></a>
     </p>
+    <!-- Understanding the recipe by sending audio recording -->
+    <!-- to process speech recognition with wit.ai -->
     <h2>
       3: Send to Wit
     </h2>
     <p>
-      <button id="send" enabled>Send</button>
+      <button id="send-btn" enabled>Send</button>
     </p>
     <p id="response">...</p>
+
+    <!-- Recipe search this will be a separate JS file to perform task -->
+
+    <!-- Display modal with Relevant Recipe  -->
+
+    <!-- Display detailed information for the recipe -->
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="./assets/script/script.js"></script>
