@@ -17,7 +17,9 @@
 
 ## Description
 
-The Voice Recipe Search System is a voice-enabled application and project aimed at enabling users to search for recipes using natural language voice commands. Leveraging technologies like JavaScript, jQuery, Web APIs, DOM manipulation, and Wit.ai for natural language understanding, the system offers a seamless and interactive recipe search experience. Users can interact with the system by speaking into their device's microphone, specifying ingredients or dish preferences, and receiving recipe suggestions.
+The Voice Recipe Search System is a voice-enabled application aimed to empower users in effortlessly searching for recipes using natural language voice commands.
+By harnessing advanced technologies such as JavaScript, jQuery, Web APIs, DOM manipulation, and Wit.ai for natural language understanding, the system provides a seamless and interactive recipe search experience.
+Users can easily engage with the system by articulating their preferences into their device's microphone, specifying ingredients or dish preferences, and promptly receiving personalized recipe suggestions.
 
 ## Table of Contents
 
