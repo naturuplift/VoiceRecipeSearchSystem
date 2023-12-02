@@ -15,6 +15,6 @@
 
 
 
-// Understanding state: transition to the "translating state"
+// Understanding state: transition to the "recipe search state"
 // if the translation intent is detected via --> search.js
 // otherwise request user to clarify/change the recipe question
