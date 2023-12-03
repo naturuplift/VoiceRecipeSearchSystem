@@ -17,6 +17,17 @@ let userIntent = ""; // intitialize it
 function useWit(userRequest) {
     console.log("started using Wit function")
 
+//     $ curl \'https://api.wit.ai/message?v=20230215&q=hello' \
+//   -H "Authorization: Bearer $TOKEN"
+
+const q = encodeURIComponent('vegetable soup dish with ingretients such as tomatoes');
+const uri = 'https://api.wit.ai/message?v=20231202&q=' + q;
+const auth = 'Bearer ' + 'V3EZPKQJCUMULEEUOE3WLKPSUMO7HMSP';
+fetch(uri, {headers: {Authorization: auth}})
+  .then(res => res.json())
+  .then(res => console.log(res))
+
+
     // Understanding state: extract the intent and entities from 
     // the user's request in wit.ai
     // That is, turn the message into actionable search query

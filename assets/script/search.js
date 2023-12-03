@@ -2,7 +2,7 @@
 // the recipe requested such as dishes, ingredients, cuisine
 
 // let query = userIntent; // TODO uncomment when want to use user recipe request from audio
-let query = 'vegetable soup ';
+let query = 'vegetable soup';
 let recipeResult = [];
 
 // Recipe search state: use a recipe API https://api-ninjas.com/api/recipe
@@ -111,9 +111,11 @@ const recipe = [
         "ingredients": "1 1/2 Quarts chicken stock|3/4 c (1-1/2 sticks) butter|3/4 c Diced onion|1 1/2 c Diced potato|3/4 c Peeled diced tomato|3/4 c Diced carrot|3/4 c Green beans|3/4 c Broccoli, coarsely chopped|3/4 c Minced leek|3/4 c Minced zucchini|1 Clove garlic|1 1/2 ts Sugar, or to taste|Salt and freshly ground pepper to taste|1/2 c Heavy cream",
         "servings": "6 Servings",
         "instructions": "Melt butter in large stock pot over medium heat. Add onion and saute' 1 to 2 minutes. Reduce heat to low and add remaining ingredients except stock, cream and parsley. Cook until vegetables are soft but not brown, about 20-25 minutes. Add stock and bring to boil over medium high heat. Reduce heat and simmer about 10 minutes. Cook slightly. Transfer to blender of processor in batches and puree to smooth. Taste and adjust seasoning. Return to stock pot, place over medium heat and gradually stir in cream. Heat through but do not boil. Garnish with parsley. From Le Cellier Restaurant, Santa Monica, California. Recipe shared by Cate Vanicek"
-    }
-]
+    },
+];
 
+// define global variable recipeResult to be use in relevantrecipe.js
+recipeResult = recipe;
 console.log(recipe)
 
 // call objects:
@@ -121,3 +123,4 @@ console.log(recipe)
 // For first one the recipe ingredients recipe[0].ingredients;
 // For first one the recipe servings recipe[0].servings;
 // For first one the recipe instructions recipe[0].instructions;
+// can be extracted with 'for' loop until: recipe.length
