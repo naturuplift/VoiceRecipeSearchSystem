@@ -1,4 +1,38 @@
 .jumbotronBackground {
-  background-color: blueviolet;
-  padding: 20px;
+  background: linear-gradient(
+    44.8deg,
+    rgba(255, 136, 102, 0.67) -53.1%,
+    rgba(255, 221, 136, 0.28) 49%
+  );
+  padding: 30px;
+}
+
+h1 {
+  text-align: center;
+}
+.form-group {
+  text-align: center;
+}
+
+.row {
+  padding: 15px;
+}
+.col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.recipe-details-box {
+  background-image: url("/bootcamp-project-one/assets/img/recipe\ background\ 2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+  padding: 55px;
+}
+.recipe-title {
+  color: blue;
+}
+.previous-searches {
+  text-align: left;
 }
