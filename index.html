@@ -23,7 +23,7 @@
   <body>
     <!--NavBar-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Name of app</a>
+      <a class="navbar-brand" href="#">Voice to Recipe</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -39,14 +39,19 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#"
+            <a class="nav-link" href="#body"
               >Home <span class="sr-only">(current)</span></a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a
+              class="nav-link"
+              href="https://www.amazon.ca/dp/B0CKV2D99K?psc=1&ref=ppx_yo2ov_dt_b_product_details"
+              target="_blank"
+              >Buy Recipe Notebook</a
+            >
           </li>
-          <li class="nav-item dropdown">
+          <!-- <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle"
               href="#"
@@ -64,10 +69,7 @@
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
+          </li> -->
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <input
@@ -84,24 +86,114 @@
 
     <div class="jumbotron jumbotron-fluid jumbotronBackground">
       <div class="container">
-        <h1 class="display-4">Fluid jumbotron</h1>
-        <p class="lead">
-          This is a modified jumbotron that occupies the entire horizontal space
-          of its parent.
-        </p>
+        <h1 class="display-4">Find recipes from your favorite meals!</h1>
         <form>
           <div class="form-group">
-            <label for="exampleFormControlTextarea1">Example textarea</label>
+            <label for="exampleFormControlTextarea1"
+              >Use your voice or type the name of your favorite recipe in the
+              white box.</label
+            >
             <textarea
               class="form-control"
               id="exampleFormControlTextarea1"
               rows="3"
             ></textarea>
+
+            <!--Adding columns-->
+
+            <div class="row">
+              <div class="col">
+                <!--Adding the record to text code / Copy of existing-->
+                <!-- To start/stop audio recording -->
+                <button
+                  id="record-btn"
+                  enabled
+                  type="button"
+                  class="btn btn-light"
+                >
+                  Record audio
+                </button>
+                <button
+                  id="stop-btn"
+                  enabled
+                  type="button"
+                  class="btn btn-light"
+                >
+                  Stop
+                </button>
+                <!-- To verify audio recording -->
+                <button
+                  id="verify-btn"
+                  enabled
+                  type="button"
+                  class="btn btn-light"
+                >
+                  Verify audio
+                </button>
+                <!-- Understanding the recipe by sending audio recording -->
+                <!-- to process speech recognition with wit.ai -->
+                <button
+                  id="send-btn"
+                  enabled
+                  type="button"
+                  class="btn btn-light"
+                >
+                  Send
+                </button>
+              </div>
+              <div class="col">
+                <button
+                  id="clear-btn"
+                  enabled
+                  type="button"
+                  class="btn btn-light"
+                >
+                  Clear
+                </button>
+              </div>
+              <div class="col">
+                <button
+                  id="send-btn"
+                  type="button"
+                  class="btn btn-outline-success my-2 my-sm-0"
+                >
+                  Send
+                </button>
+              </div>
+            </div>
           </div>
         </form>
       </div>
     </div>
+    <!-- Adding the boxes for Recipe and Previous 10 Searches-->
 
+    <div class="row">
+      <div class="col col-8">
+        <div class="recipe-details-box rounded">
+          <h1 class="recipe-title">Name of Recipe</h1>
+
+          <p class="recipe-details">Recipe details</p>
+          <p>
+            Recipe detailsRecipe detailsRecipe detailsRecipe detailsRecipe
+            detailsRecipe detailsRecipe detailsRecipe detailsRecipe
+            detailsRecipe detailsRecipe detailsRecipe detailsRecipe
+            detailsRecipe detailsRecipe detailsRecipe detailsRecipe
+            detailsRecipe detailsRecipe detailsRecipe detailsRecipe details
+          </p>
+        </div>
+      </div>
+      <!--Still working on formatting this, add border-->
+      <div class="col col-4">
+        <div class="previous-searches rounded">
+          <h2>Previous 10 Searches:</h2>
+          <li>
+            <ul></ul>
+          </li>
+        </div>
+      </div>
+    </div>
+    <!--From here on is  the Wit original code-->
+    <!--Wit record to text code-->
     <h2>1: Record</h2>
     <!-- To start/stop audio recording -->
     <p>
