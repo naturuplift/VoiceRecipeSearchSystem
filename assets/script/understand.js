@@ -22,7 +22,7 @@ function useWit(userRequest) {
 
 const q = encodeURIComponent('vegetable soup dish with ingretients such as tomatoes');
 const uri = 'https://api.wit.ai/message?v=20231202&q=' + q;
-const auth = 'Bearer ' + 'V3EZPKQJCUMULEEUOE3WLKPSUMO7HMSP';
+const auth = 'Bearer ' + 'DO NOT EXPOSE TO PUBLIC!'; // TODO hide auth before pushing to git
 fetch(uri, {headers: {Authorization: auth}})
   .then(res => res.json())
   .then(res => console.log(res))
