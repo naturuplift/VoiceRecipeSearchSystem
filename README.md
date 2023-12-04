@@ -70,12 +70,14 @@ git clone https://github.com/YOUR_USERNAME/voice-recipe-search-system.git
 ## Technologies Used
 
 -    HTML
+-    CSS
 -    JavaScript
+-    jQuery
 -    Web Speech API
 -    [Wit API][wit-api]
--    [Spoonacular API][https://spoonacular.com/food-api/docs]
+-    [Spoonacular API][spoon-api]
 
-## Steps to build Recipe Intent Recognition with Wit.ai
+## Steps to Build Recipe Intent Recognition with Wit.ai
 
 1. **Sign up with Meta:** Go to the [Wit.ai home page][wit-api] and sign in with your Meta account.
 2. **Create a Wit app:** Click the New App button on the Welcome to Wit.ai page. Creating a new app is very simple: you just need to name your app, and choose a language. Then click Create.
@@ -89,7 +91,7 @@ Implement the logic for your bot or app to actually get or set the temperature
 Connect your Wit app with Messenger to start receiving entities when your users talk to your bot
 The last step is to use our HTTP API to integrate Wit to your app.
 
-## Explanation of Wit.ai concepts of intents, entities and traits
+## Explanation of Wit.ai Concepts of Intents, Entities and Traits
 
 #### **Intent:**
 An intent represents the goal or purpose behind a user's input. It signifies what the user is trying to achieve or communicate. In the context of chatbots or natural language processing systems, intents are used to categorize user messages based on their intended meaning.
@@ -133,7 +135,7 @@ Imagine you're building a recipe search chatbot. When a user says, "Find me a re
 
 By defining intents, entities, and traits, you create a structured way for your system to understand and respond to a wide range of user inputs, making your chatbot or natural language processing application more effective and user-friendly.
 
-### Training a model on the wit.ai platform
+### Training a Model on the wit.ai Platform
 
 To create utterances and intents for a recipe search system using Wit.ai, you'll want to define various ways users might express their requests. Here's an example set of intents and corresponding utterances for a recipe search system:
 
@@ -203,6 +205,36 @@ To create utterances and intents for a recipe search system using Wit.ai, you'll
 || ***Entity: none***
 || This intent is used when the user specifically requests healthy or nutritious recipes. There are no specific entities or roles involved in this case
 
+## How to Define Search Queries in Spoonacular API
+
+We matched intents extracted by Wit and used API that match in Spoonacular API
+
+|**Intent:**| **GetRecipe**|
+| ------ | ------ |
+|Method  | GET
+|API  |https://api.spoonacular.com/recipes/complexSearch|
+
+|**Intent:**| **GetRecipeByIngredient**|
+| ------ | ------ |
+|Method  | GET
+| API| https://api.spoonacular.com/recipes/findByIngredients|
+
+|**Intent:**| **GetRecipeDetails**|
+| ------ | ------ |
+|Method  | GET
+| API| https://api.spoonacular.com/recipes/{id}/information|
+
+|**Intent:**| **GetHealthyRecipes**|
+| ------ | ------ |
+|Method  | GET
+| API| https://api.spoonacular.com/recipes/complexSearch|
+|Parameters|Hard-code healthy parameters for the request|
+
+|**Intent:**| **GetRandomRecipe**|
+| ------ | ------ |
+|Method  | GET
+| API| https://api.spoonacular.com/recipes/random|
+
 ## State Flow Diagram
 
 For a visual representation of the sequence of actions involved in the Voice Language Translation System, refer to the [State Flow Diagram][state-flow] provided in the project documentation.
@@ -224,4 +256,5 @@ This project is licensed under the MIT License. See the [LICENSE][MIT] file for 
 [project-code]: <https://github.com/naturuplift/bootcamp-project-one/blob/main/index.html>
 [state-flow]: <https://github.com/naturuplift/bootcamp-project-one/blob/main/assets/img/Voice%20Language%20Translation%20State%20Diagram%20v2.png>
 [wit-api]: <https://wit.ai/>
+[spoon-api]: <https://spoonacular.com/food-api/docs>
 [MIT]: <https://github.com/naturuplift/bootcamp-project-one/blob/main/LICENSE>
