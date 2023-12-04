@@ -33,6 +33,58 @@ fetch(uri, {headers: {Authorization: auth}})
     // That is, turn the message into actionable search query
 }
 
+
+// Response to good query:
+// GET https://api.wit.ai/message?v=20231203&q=Find%20me%20an%20easy%20recipe%20for%20chicken%20curry
+
+// {
+//     "entities": {
+//         "dish:dish": [
+//             {
+//                 "body": "curry",
+//                 "confidence": 1,
+//                 "end": 40,
+//                 "entities": {},
+//                 "id": "862527508704425",
+//                 "name": "dish",
+//                 "role": "dish",
+//                 "start": 35,
+//                 "type": "value",
+//                 "value": "dish"
+//             }
+//         ],
+//         "ingredient:ingredient": [
+//             {
+//                 "body": "chicken",
+//                 "confidence": 1,
+//                 "end": 34,
+//                 "entities": {},
+//                 "id": "880235700091364",
+//                 "name": "ingredient",
+//                 "role": "ingredient",
+//                 "start": 27,
+//                 "type": "value",
+//                 "value": "ingredient"
+//             }
+//         ]
+//     },
+//     "intents": [],
+//     "text": "Find me an easy recipe for chicken curry",
+//     "traits": {}
+// }
+
+
+// Response to bad query:
+// GET https://api.wit.ai/message?v=20231203&q=I%20want%20to%20buy%20a%20ford%20mustang%20with%205%20liter%20engine
+
+// {
+//     "entities": {},
+//     "intents": [],
+//     "text": "I want to buy a ford mustang with 5 liter engine",
+//     "traits": {}
+// }
+
+
 // Understanding state: transition to the "recipe search state"
 // if the translation intent is detected via --> search.js
 // otherwise request user to clarify/change the recipe question

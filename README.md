@@ -154,16 +154,6 @@ To create utterances and intents for a recipe search system using Wit.ai, you'll
     - ***Entity: {ingredient}***
     - This intent is used when the user wants recipes based on a specific ingredient they have or want to use. The entity ***{ingredient}*** captures the name of the ingredient.
 
-**Intent: GetRandomRecipe**
-- ***Utterances:***
-    - "Surprise me with a random recipe"
-    - "Give me a random recipe"
-    - "What's something new I can try cooking?"
-    - "I want to try something different, suggest a recipe"
-- ***Explanation:***
-    - ***Entity: none***
-    - This intent is used when the user wants a random recipe suggestion. There are no specific entities or roles involved in this case.
-
 **Intent: GetRecipeDetails**
 - ***Utterances:***
     - "Tell me more about the recipe for {dish}"
@@ -173,16 +163,6 @@ To create utterances and intents for a recipe search system using Wit.ai, you'll
 - ***Explanation:***
     - ***Entity: {dish}***
     - This intent is used when the user wants more details about a specific recipe. The entity ***{dish}*** captures the name of the dish for which the user wants details.
-
-**Intent: RateRecipe**
-- ***Utterances:***
-    - "I liked the {dish} recipe"
-    - "Rate the {dish} dish"
-    - "How good is the {dish} recipe?"
-    - "Give {dish} recipe a rating"
-- ***Explanation:***
-    - ***Entity: {dish}***
-    - This intent is used when the user wants to express their opinion or rate a specific recipe. The entity ***{dish}*** captures the name of the dish being referred to.
 
 **Intent: GetHealthyRecipes**
 - ***Utterances:***
