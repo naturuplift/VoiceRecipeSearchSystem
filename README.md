@@ -27,6 +27,7 @@ Users can easily engage with the system by articulating their preferences into t
 - [Features](#features)
 - [Usage](#usage)
 - [Technologies Used](#technologies-used)
+- [Steps to build Recipe Intent Recognition](#steps-to-build-recipe-intent-recognition)
 - [State Flow Diagram](#state_flow_diagram)
 - [Contributing](#contributing)
 - [License](#license)
@@ -36,8 +37,8 @@ Users can easily engage with the system by articulating their preferences into t
 ## Features
 
 - **Voice Recognition:** Utilizes the Web Speech API for speech recognition, allowing users to initiate recipe searches using voice commands.
-- **Natural Language Processing:** Employs natural language processing techniques to interpret user voice input and extract relevant information.
-- **Recipe Search:** Integrates with a recipe database or API to perform real-time recipe searches based on user preferences.
+- **Natural Language Processing:** Employs natural language processing techniques to interpret user intent for input and extract relevant information.
+- **Recipe Search:** Integrates with a recipe database or API to perform real-time recipe searches based on interpreted request.
 - **User-friendly Interface:** Provides a simple and intuitive interface for a seamless user experience.
 
 
@@ -58,7 +59,7 @@ git clone https://github.com/YOUR_USERNAME/voice-recipe-search-system.git
 
 2.    Start Voice Search:
         Click the "Start Voice Search" button.
-        Speak a command like "Find recipes with [ingredient]."
+        Speak a command like "Find recipes with ingredient."
 
 3.    View Results:
         The system will display recognized voice commands and initiate a recipe search.
@@ -71,6 +72,59 @@ git clone https://github.com/YOUR_USERNAME/voice-recipe-search-system.git
 -    Web Speech API
 -    [Wit API][wit-api]
 -    [Any additional technologies or libraries used]
+
+## Steps to build Recipe Intent Recognition
+
+### Training a model on the wit.ai platform
+1. **Sign up with Meta:** Go to the [Wit.ai home page][wit-api] and sign in with your Meta account.
+2. **Create a Wit app:** Click the New App button on the Welcome to Wit.ai page. Creating a new app is very simple: you just need to name your app, and choose a language. Then click Create.
+3. **Train your app:** Wit allows you to understand what your users say to your app. The Understanding section is where you teach Wit how to understand your users.
+4. **Improve the detection:** Your app doesn't know a lot yet, but it will start to recognize the intent of getting information about what temperature it is. When Wit starts recognizing the utterance, the intent will be prefilled along with a level of confidence (between 0 and 1).
+5. **Query your app:** At this point, you can already query your app via the Wit.ai API. Go to the Settings screen (click Settings from the Management menu). Type an example like what's the temperature in there? in the Query Your App box. Then copy the cURL command and try it in your terminal.
+6. **Add a new intent:** Now go to the Understanding screen again. Surprise! You now see the new examples you tried when querying the API. Every previously unseen utterance hitting the API will show up here, prefilled with the intent recognized by Wit.
+7. **Add an entity and capture more:** In the previous example, we also want to capture the targeted temperature. We will use entities to extract meaningful pieces of information from an utterance.
+8. **Next steps:** Congrats! You've built your first Wit app and it can understand the difference between requests to set or get the temperature. Now, you can:
+Implement the logic for your bot or app to actually get or set the temperature
+Connect your Wit app with Messenger to start receiving entities when your users talk to your bot
+The last step is to use our HTTP API to integrate Wit to your app.
+
+### Explanation of Wit.ai concepts of intents, entities and traits
+
+**Intent:** An intent represents the goal or purpose behind a user's input. It signifies what the user is trying to achieve or communicate. In the context of chatbots or natural language processing systems, intents are used to categorize user messages based on their intended meaning.
+***Example:***
+- ***Intent:*** GetRecipe
+- ***Examples of User Input:***  "Find me a recipe for spaghetti Bolognese", "Tell me how to make chocolate chip cookies"
+
+**Entities:** Entities are pieces of information within a user's input that are relevant to the intent. They represent the specific details or parameters that the system needs to extract to fulfill the user's request. Entities provide context and specificity to the intent.
+***Example:***
+- ***Intent:*** GetRecipe
+- ***Entities:***
+    - ***{dish}*** spaghetti Bolognese, chocolate chip cookies
+    - ***{ingredient}*** chicken, tomatoes
+
+**Traits:** Traits are additional characteristics or attributes associated with entities. They provide more nuanced information about the entities, helping to refine and narrow down the search or response. Traits add granularity to the understanding of user inputs.
+***Example:***
+- ***Intent:*** GetRecipe
+- ***Entities:***
+    - ***{dish}*** spaghetti Bolognese
+    - ***{cuisine}*** (trait) - Italian
+    - ***{difficultyLevel}*** (trait) - Intermediate
+
+### How They Work Together
+
+**Scenario**
+- ***User Input:*** "Find me an easy recipe for chicken curry."
+**Analysis**
+- ***Intent Detected:*** GetRecipe
+- ***Entities Extracted:***
+    - ***{dish}*** chicken curry
+    - ***{difficultyLevel}*** (trait) - easy
+
+### Practical Use Case
+
+Imagine you're building a recipe search chatbot. When a user says, "Find me a recipe for spaghetti Bolognese," the system recognizes the intent as GetRecipe and extracts the entity {dish} as "spaghetti Bolognese." These extracted details help the chatbot understand the user's request and respond appropriately by providing information about the spaghetti Bolognese recipe.
+
+By defining intents, entities, and traits, you create a structured way for your system to understand and respond to a wide range of user inputs, making your chatbot or natural language processing application more effective and user-friendly.
 
 ## State Flow Diagram
 
