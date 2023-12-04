@@ -73,7 +73,7 @@ git clone https://github.com/YOUR_USERNAME/voice-recipe-search-system.git
 -    JavaScript
 -    Web Speech API
 -    [Wit API][wit-api]
--    [Any additional technologies or libraries used]
+-    [Spoonacular API][https://spoonacular.com/food-api/docs]
 
 ## Steps to build Recipe Intent Recognition with Wit.ai
 
