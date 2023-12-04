@@ -16,6 +16,9 @@ $("#record-btn").click(function() {
     recordRecipe();
 });
 
+// add global variable for recognized speech
+// to use the result of userRequest on understand.js
+let userRequest = ""; // intitialize it
 
 // record voice audio for recipe using  Web Speech API
 // provides: speech recognition, and speech synthesis
@@ -62,7 +65,10 @@ function recordRecipe() {
         console.log('Speech Recognition Result:', recognizedSpeech);
 
         // TODO You can do further processing with the recognizedSpeech, such as
-        // TODO sending it to Wit.ai or performing other tasks.
+        // TODO sending it to Wit.ai or performing other tasks. See understand.js
+
+        // set to result of speech recognition to glabal variable
+        userRequest = recognizedSpeech;
 
         // Display the recognized text on the page
         $('#response').text(recognizedSpeech);
