@@ -73,9 +73,8 @@ git clone https://github.com/YOUR_USERNAME/voice-recipe-search-system.git
 -    [Wit API][wit-api]
 -    [Any additional technologies or libraries used]
 
-## Steps to build Recipe Intent Recognition
+## Steps to build Recipe Intent Recognition with Wit.ai
 
-### Training a model on the wit.ai platform
 1. **Sign up with Meta:** Go to the [Wit.ai home page][wit-api] and sign in with your Meta account.
 2. **Create a Wit app:** Click the New App button on the Welcome to Wit.ai page. Creating a new app is very simple: you just need to name your app, and choose a language. Then click Create.
 3. **Train your app:** Wit allows you to understand what your users say to your app. The Understanding section is where you teach Wit how to understand your users.
@@ -91,11 +90,13 @@ The last step is to use our HTTP API to integrate Wit to your app.
 ### Explanation of Wit.ai concepts of intents, entities and traits
 
 **Intent:** An intent represents the goal or purpose behind a user's input. It signifies what the user is trying to achieve or communicate. In the context of chatbots or natural language processing systems, intents are used to categorize user messages based on their intended meaning.
+
 ***Example:***
 - ***Intent:*** GetRecipe
 - ***Examples of User Input:***  "Find me a recipe for spaghetti Bolognese", "Tell me how to make chocolate chip cookies"
 
 **Entities:** Entities are pieces of information within a user's input that are relevant to the intent. They represent the specific details or parameters that the system needs to extract to fulfill the user's request. Entities provide context and specificity to the intent.
+
 ***Example:***
 - ***Intent:*** GetRecipe
 - ***Entities:***
@@ -103,6 +104,7 @@ The last step is to use our HTTP API to integrate Wit to your app.
     - ***{ingredient}*** chicken, tomatoes
 
 **Traits:** Traits are additional characteristics or attributes associated with entities. They provide more nuanced information about the entities, helping to refine and narrow down the search or response. Traits add granularity to the understanding of user inputs.
+
 ***Example:***
 - ***Intent:*** GetRecipe
 - ***Entities:***
@@ -114,6 +116,7 @@ The last step is to use our HTTP API to integrate Wit to your app.
 
 **Scenario**
 - ***User Input:*** "Find me an easy recipe for chicken curry."
+
 **Analysis**
 - ***Intent Detected:*** GetRecipe
 - ***Entities Extracted:***
@@ -125,6 +128,71 @@ The last step is to use our HTTP API to integrate Wit to your app.
 Imagine you're building a recipe search chatbot. When a user says, "Find me a recipe for spaghetti Bolognese," the system recognizes the intent as GetRecipe and extracts the entity {dish} as "spaghetti Bolognese." These extracted details help the chatbot understand the user's request and respond appropriately by providing information about the spaghetti Bolognese recipe.
 
 By defining intents, entities, and traits, you create a structured way for your system to understand and respond to a wide range of user inputs, making your chatbot or natural language processing application more effective and user-friendly.
+
+### Training a model on the wit.ai platform
+
+To create utterances and intents for a recipe search system using Wit.ai, you'll want to define various ways users might express their requests. Here's an example set of intents and corresponding utterances for a recipe search system:
+
+**Intent: GetRecipe**
+- ***Utterances:***
+    - "Find me a recipe for {dish}"
+    - "Give me a recipe for {dish}"
+    - "What's the recipe for {dish}?"
+    - "I want to cook {dish}, what's the recipe?"
+    - "Tell me how to make {dish}"
+- ***Explanation:***
+    - ***Entity: {dish}***
+    - This intent is used when the user wants a recipe for a specific dish. The entity ***{dish}*** captures the name of the dish the user is interested in.
+
+**Intent: GetRecipeByIngredient**
+- ***Utterances:***
+    - "What can I cook with {ingredient}?"
+    - "Give me recipes with {ingredient}"
+    - "Find recipes using {ingredient}"
+    - "I have {ingredient}, what can I make?"
+- ***Explanation:***
+    - ***Entity: {ingredient}***
+    - This intent is used when the user wants recipes based on a specific ingredient they have or want to use. The entity ***{ingredient}*** captures the name of the ingredient.
+
+**Intent: GetRandomRecipe**
+- ***Utterances:***
+    - "Surprise me with a random recipe"
+    - "Give me a random recipe"
+    - "What's something new I can try cooking?"
+    - "I want to try something different, suggest a recipe"
+- ***Explanation:***
+    - ***Entity: none***
+    - This intent is used when the user wants a random recipe suggestion. There are no specific entities or roles involved in this case.
+
+**Intent: GetRecipeDetails**
+- ***Utterances:***
+    - "Tell me more about the recipe for {dish}"
+    - "Details of {dish} recipe"
+    - "What do I need for {dish}?"
+    - "List ingredients for {dish}"
+- ***Explanation:***
+    - ***Entity: {dish}***
+    - This intent is used when the user wants more details about a specific recipe. The entity ***{dish}*** captures the name of the dish for which the user wants details.
+
+**Intent: RateRecipe**
+- ***Utterances:***
+    - "I liked the {dish} recipe"
+    - "Rate the {dish} dish"
+    - "How good is the {dish} recipe?"
+    - "Give {dish} recipe a rating"
+- ***Explanation:***
+    - ***Entity: {dish}***
+    - This intent is used when the user wants to express their opinion or rate a specific recipe. The entity ***{dish}*** captures the name of the dish being referred to.
+
+**Intent: GetHealthyRecipes**
+- ***Utterances:***
+    - "Find me healthy recipes"
+    - "I want to cook something nutritious"
+    - "Healthy meal ideas"
+    - "Suggest me a low-calorie recipe"
+- ***Explanation:***
+    - ***Entity: none***
+    - This intent is used when the user specifically requests healthy or nutritious recipes. There are no specific entities or roles involved in this case.
 
 ## State Flow Diagram
 
