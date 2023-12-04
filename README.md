@@ -45,7 +45,9 @@ Users can easily engage with the system by articulating their preferences into t
 
 ## Usage
 
-Clone the repository to your local machine and open the `index.html` file in a web browser.
+You can simply visit the link [https://github.com/YOUR_USERNAME/voice-recipe-search-system.git][project-app].
+
+Another option is to clone the repository to your local machine and open the `index.html` file in a web browser.
 
 ```
 git clone https://github.com/YOUR_USERNAME/voice-recipe-search-system.git
@@ -87,41 +89,43 @@ Implement the logic for your bot or app to actually get or set the temperature
 Connect your Wit app with Messenger to start receiving entities when your users talk to your bot
 The last step is to use our HTTP API to integrate Wit to your app.
 
-### Explanation of Wit.ai concepts of intents, entities and traits
+## Explanation of Wit.ai concepts of intents, entities and traits
 
-**Intent:** An intent represents the goal or purpose behind a user's input. It signifies what the user is trying to achieve or communicate. In the context of chatbots or natural language processing systems, intents are used to categorize user messages based on their intended meaning.
+#### **Intent:**
+An intent represents the goal or purpose behind a user's input. It signifies what the user is trying to achieve or communicate. In the context of chatbots or natural language processing systems, intents are used to categorize user messages based on their intended meaning.
 
-***Example:***
-- ***Intent:*** GetRecipe
-- ***Examples of User Input:***  "Find me a recipe for spaghetti Bolognese", "Tell me how to make chocolate chip cookies"
+| ***Intent:*** | GetRecipe |
+| ------ | ------ |
+| ***Examples of User Input:*** | "Find me a recipe for spaghetti Bolognese", "Tell me how to make chocolate chip cookies"|
 
-**Entities:** Entities are pieces of information within a user's input that are relevant to the intent. They represent the specific details or parameters that the system needs to extract to fulfill the user's request. Entities provide context and specificity to the intent.
+#### **Entities:**
+Entities are pieces of information within a user's input that are relevant to the intent. They represent the specific details or parameters that the system needs to extract to fulfill the user's request. Entities provide context and specificity to the intent.
 
-***Example:***
-- ***Intent:*** GetRecipe
-- ***Entities:***
-    - ***{dish}*** spaghetti Bolognese, chocolate chip cookies
-    - ***{ingredient}*** chicken, tomatoes
+| ***Intent:*** | GetRecipe |
+| ------ | ------ |
+| ***Entities:***| |
+| | ***{dish}*** spaghetti Bolognese, chocolate chip cookies |
+| | ***{ingredient}*** chicken, tomatoes |
 
-**Traits:** Traits are additional characteristics or attributes associated with entities. They provide more nuanced information about the entities, helping to refine and narrow down the search or response. Traits add granularity to the understanding of user inputs.
+#### **Traits:**
+Traits are additional characteristics or attributes associated with entities. They provide more nuanced information about the entities, helping to refine and narrow down the search or response. Traits add granularity to the understanding of user inputs.
 
-***Example:***
-- ***Intent:*** GetRecipe
-- ***Entities:***
-    - ***{dish}*** spaghetti Bolognese
-    - ***{cuisine}*** (trait) - Italian
-    - ***{difficultyLevel}*** (trait) - Intermediate
+| ***Intent:*** | GetRecipe |
+| ------ | ------ |
+| ***Entities:***| |
+| | ***{dish}*** spaghetti Bolognese|
+| | ***{cuisine}*** (trait) - Italian|
+| | ***{difficultyLevel}*** (trait) - Intermediate
 
-### How They Work Together
+#### ***How They Work Together***
 
-**Scenario**
-- ***User Input:*** "Find me an easy recipe for chicken curry."
-
-**Analysis**
-- ***Intent Detected:*** GetRecipe
-- ***Entities Extracted:***
-    - ***{dish}*** chicken curry
-    - ***{difficultyLevel}*** (trait) - easy
+|**Scenario**|***User Input:*** |"Find me an easy recipe for chicken curry."|
+| ------ | ------ |------ |
+|**Analysis**|||
+|| ***Intent Detected:*** |GetRecipe
+|| ***Entities Extracted:***
+||| ***{dish}*** chicken curry
+||| ***{difficultyLevel}*** (trait) - easy
 
 ### Practical Use Case
 
@@ -133,46 +137,71 @@ By defining intents, entities, and traits, you create a structured way for your 
 
 To create utterances and intents for a recipe search system using Wit.ai, you'll want to define various ways users might express their requests. Here's an example set of intents and corresponding utterances for a recipe search system:
 
-**Intent: GetRecipe**
-- ***Utterances:***
-    - "Find me a recipe for {dish}"
-    - "Give me a recipe for {dish}"
-    - "What's the recipe for {dish}?"
-    - "I want to cook {dish}, what's the recipe?"
-    - "Tell me how to make {dish}"
-- ***Explanation:***
-    - ***Entity: {dish}***
-    - This intent is used when the user wants a recipe for a specific dish. The entity ***{dish}*** captures the name of the dish the user is interested in.
+#### **GetRecipe**
+|**Intent:**| **GetRecipe**|
+| ------ | ------ |
+| ***Utterances:***||
+||"Find me a recipe for {dish}"
+||"Give me a recipe for {dish}"
+||"What's the recipe for {dish}?"
+||"I want to cook {dish}, what's the recipe?"
+||"Tell me how to make {dish}"
+| ***Explanation:***
+|| ***Entity: {dish}***
+|| This intent is used when the user wants a recipe for a specific dish. The entity ***{dish}*** captures the name of the dish the user is interested in.
 
-**Intent: GetRecipeByIngredient**
-- ***Utterances:***
-    - "What can I cook with {ingredient}?"
-    - "Give me recipes with {ingredient}"
-    - "Find recipes using {ingredient}"
-    - "I have {ingredient}, what can I make?"
-- ***Explanation:***
-    - ***Entity: {ingredient}***
-    - This intent is used when the user wants recipes based on a specific ingredient they have or want to use. The entity ***{ingredient}*** captures the name of the ingredient.
+#### **GetRecipeByIngredient**
 
-**Intent: GetRecipeDetails**
-- ***Utterances:***
-    - "Tell me more about the recipe for {dish}"
-    - "Details of {dish} recipe"
-    - "What do I need for {dish}?"
-    - "List ingredients for {dish}"
-- ***Explanation:***
-    - ***Entity: {dish}***
-    - This intent is used when the user wants more details about a specific recipe. The entity ***{dish}*** captures the name of the dish for which the user wants details.
+|**Intent:** |**GetRecipeByIngredient**|
+| ------ | ------ |
+| ***Utterances:***|
+||"What can I cook with {ingredient}?"
+|| "Give me recipes with {ingredient}"
+|| "Find recipes using {ingredient}"
+|| "I have {ingredient}, what can I make?"
+| ***Explanation:***|
+|| ***Entity: {ingredient}***
+|| This intent is used when the user wants recipes based on a specific ingredient they have or want to use. The entity ***{ingredient}*** captures the name of the ingredient.
 
-**Intent: GetHealthyRecipes**
-- ***Utterances:***
-    - "Find me healthy recipes"
-    - "I want to cook something nutritious"
-    - "Healthy meal ideas"
-    - "Suggest me a low-calorie recipe"
-- ***Explanation:***
-    - ***Entity: none***
-    - This intent is used when the user specifically requests healthy or nutritious recipes. There are no specific entities or roles involved in this case.
+#### **GetRecipeDetails**
+
+|**Intent:**| **GetRecipeDetails**|
+| ------ | ------ |
+|***Utterances:***
+|| "Tell me more about the recipe for {dish}"
+|| "Details of {dish} recipe"
+|| "What do I need for {dish}?"
+|| "List ingredients for {dish}"
+| ***Explanation:***||
+|| ***Entity: {dish}***
+|| This intent is used when the user wants more details about a specific recipe. The entity ***{dish}*** captures the name of the dish for which the user wants details.
+
+#### **GetHealthyRecipes**
+
+|**Intent:**| **GetHealthyRecipes**|
+| ------ | ------ |
+| ***Utterances:***
+|| "Find me healthy recipes"
+|| "I want to cook something nutritious"
+|| "Healthy meal ideas"
+|| "Suggest me a low-calorie recipe"
+| ***Explanation:***|
+||***Entity: none***
+||This intent is used when the user specifically requests healthy or nutritious recipes. There are no specific entities or roles involved in this case.
+
+
+#### **GetRandomRecipe**
+
+|**Intent:**| **GetRandomRecipe**|
+| ------ | ------ |
+| ***Utterances:***|
+|| "Find me healthy recipes"
+|| "I want to cook something nutritious"
+|| "Healthy meal ideas"
+|| "Suggest me a low-calorie recipe"
+| ***Explanation:***
+|| ***Entity: none***
+|| This intent is used when the user specifically requests healthy or nutritious recipes. There are no specific entities or roles involved in this case
 
 ## State Flow Diagram
 
