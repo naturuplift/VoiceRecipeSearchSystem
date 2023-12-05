@@ -8,15 +8,17 @@
     <title>App in Action</title>
 
     <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="./assets/css/reset.css" /> 
+   
+       
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
       integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
       crossorigin="anonymous"
     />
-
-    <link rel="stylesheet" href="./assets/css/styles.css" />
-    <link rel="stylesheet" href="./assets/css/reset.css" />
+ <link rel="stylesheet" href="./assets/css/styles.css" />
+   
   </head>
 
   <!-- Body -->
@@ -42,16 +44,13 @@
             <a class="nav-link" href="#body"
               >Home <span class="sr-only">(current)</span></a
             >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              href="https://www.amazon.ca/dp/B0CKV2D99K?psc=1&ref=ppx_yo2ov_dt_b_product_details"
-              target="_blank"
-              >Buy Recipe Notebook</a
+             <li class="nav-item active">
+            <a class="nav-link" href="#body"
+              >Previous Searches <span class="sr-only">(current)</span></a
             >
-          </li>
-          <!-- <li class="nav-item dropdown">
+             <li class="nav-item active">
+
+           <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle"
               href="#"
@@ -61,26 +60,19 @@
               aria-haspopup="true"
               aria-expanded="false"
             >
-              Dropdown
+              Explore More
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="https://www.amazon.ca/dp/B0CKV2D99K?psc=1&ref=ppx_yo2ov_dt_b_product_details"
+              target="_blank">Buy Recipe Notebook</a>
               <a class="dropdown-item" href="#">Another action</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
-          </li> -->
+          </li>
+
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input
-            class="form-control mr-sm-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          /><button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-            Search
-          </button>
-        </form>
+        
       </div>
     </nav>
 
@@ -111,36 +103,10 @@
                   type="button"
                   class="btn btn-light"
                 >
-                  Record audio
+                  Use your voice
                 </button>
-                <button
-                  id="stop-btn"
-                  enabled
-                  type="button"
-                  class="btn btn-light"
-                >
-                  Stop
-                </button>
-                <!-- To verify audio recording -->
-                <button
-                  id="verify-btn"
-                  enabled
-                  type="button"
-                  class="btn btn-light"
-                >
-                  Verify audio
-                </button>
-                <!-- Understanding the recipe by sending audio recording -->
-                <!-- to process speech recognition with wit.ai -->
-                <button
-                  id="send-btn"
-                  enabled
-                  type="button"
-                  class="btn btn-light"
-                >
-                  Send
-                </button>
-              </div>
+              <!-- Removed the stop, verify audio and send buttons -->
+               
               <div class="col">
                 <button
                   id="clear-btn"
@@ -153,11 +119,11 @@
               </div>
               <div class="col">
                 <button
-                  id="send-btn"
+                  id="search-btn"
                   type="button"
                   class="btn btn-outline-success my-2 my-sm-0"
                 >
-                  Send
+                  Search
                 </button>
               </div>
             </div>
@@ -165,15 +131,31 @@
         </form>
       </div>
     </div>
+<!--Search Recipe Results-->
+<div id="recipeResultsList">
+  <h2>Results:</h2>
+  <li>
+    <ol>
+  </ol></li>
+
+</div>
+
+<!--Add the modal here-->
+
+
     <!-- Adding the boxes for Recipe and Previous 10 Searches-->
 
     <div class="row">
       <div class="col col-8">
         <div class="recipe-details-box rounded">
-          <h1 class="recipe-title">Name of Recipe</h1>
+          <h2 class="recipe-title" id="title">Name of Recipe</h2>
 
-          <p class="recipe-details">Recipe details</p>
-          <p>
+          <p class="recipe-details" >Servings: <p id="servings"> 123</p>
+          <p class="recipe-details" >Ingredients: <p id="ingredients"> <li><ul>123</ul></li></p>
+
+          <p lass="recipe-details" >Instructions: </p>
+          
+            <p id="instruction"> 
             Recipe detailsRecipe detailsRecipe detailsRecipe detailsRecipe
             detailsRecipe detailsRecipe detailsRecipe detailsRecipe
             detailsRecipe detailsRecipe detailsRecipe detailsRecipe
@@ -192,32 +174,9 @@
         </div>
       </div>
     </div>
-    <!--From here on is  the Wit original code-->
-    <!--Wit record to text code-->
-    <h2>1: Record</h2>
-    <!-- To start/stop audio recording -->
-    <p>
-      <button id="record-btn" enabled>Record audio</button>
-      <!-- <button id="stop-btn" enabled>Stop</button> -->
-    </p>
-    <!-- To verify audio recording -->
-    <h2>2: Verify</h2>
-    <p>
-      <button id="verify-btn" enabled>Verify audio</button>
-    </p>
-    <p>
-      <audio id="audio" />
-    </p>
-    <p>
-      <a id="download"></a>
-    </p>
-    <!-- Understanding the recipe by sending audio recording -->
-    <!-- to process speech recognition with wit.ai -->
-    <h2>3: Send to Wit</h2>
-    <p>
-      <button id="send-btn" enabled>Send</button>
-    </p>
-    <p id="response">...</p>
+    <!--From here on is  the Wit original code--> 
+    <!-- removed the original record, verify and send to wit -->
+   
 
     <!-- Recipe search this will be a separate JS file to perform task -->
 
