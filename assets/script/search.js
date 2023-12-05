@@ -1,25 +1,29 @@
 // Recipe search state: determine the specific details of
 // the recipe requested such as dishes, ingredients, cuisine
+// userRecipe = "tiramisu"; // TODO uncomment when want to use user recipe request from audio
+// let recipeResult = []; // TODO confirm if we need to reset previous result
 
-// let query = userIntent; // TODO uncomment when want to use user recipe request from audio
-let query = 'vegetable soup';
-let recipeResult = [];
-
-// Recipe search state: use a recipe API https://api-ninjas.com/api/recipe
-//  to search for relevant recipes based on the user's criteria
-// TODO uncoment when want to use recipe API
-$.ajax({
-    method: 'GET',
-    url: 'https://api.api-ninjas.com/v1/recipe?query=' + query,
-    headers: { 'X-Api-Key': 'R7MQ/gHf0xql30zzgucgcA==FxF0MP3I7Mx0bJdu'}, // TODO hide auth before pushing to git
-    contentType: 'application/json',
-    success: function(result) {
-        recipeResult = result; // save result of the search
-        console.log(result);
+// add listeners for recipe search
+$("#search-btn").click(function () {
+  console.log("click search.js running");
+  // assign query search to interpreted recipe
+  var query = userRecipe;
+  // Recipe search state: use a recipe API https://api-ninjas.com/api/recipe
+  //  to search for relevant recipes based on the user's criteria
+  // TODO uncoment when want to use recipe API
+  $.ajax({
+    method: "GET",
+    url: "https://api.api-ninjas.com/v1/recipe?query=" + query,
+    headers: { "X-Api-Key": "HwswvW2ZgW1gs+or2YpduA==YlWBpTpOTVnFXBF0" }, // TODO hide auth before pushing to git
+    contentType: "application/json",
+    success: function (result) {
+      recipeResult = result; // save result of the search
+      console.log(result);
     },
     error: function ajaxError(jqXHR) {
-        console.error('Error: ', jqXHR.responseText);
-    }
+      console.error("Error: ", jqXHR.responseText);
+    },
+  });
 });
 
 // Here one sample output from recipe API query:
@@ -114,7 +118,7 @@ $.ajax({
 //     },
 // ];
 
-// // define global variable recipeResult to be use in relevantrecipe.js
+// define global variable recipeResult to be use in relevantrecipe.js
 // recipeResult = recipe;
 // console.log(recipe)
 
