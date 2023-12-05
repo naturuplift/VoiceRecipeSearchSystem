@@ -10,8 +10,8 @@ let recipeResult = [];
 // TODO uncoment when want to use recipe API
 $.ajax({
     method: 'GET',
-    url: 'https://api.spoonacular.com/recipes/complexSearch?query=' + query + '&instructionsRequired=true&addRecipeInformation=true',
-    headers: { 'X-Api-Key': 'd63e18956a774f15b02ad97a7ae8903d'}, // TODO hide auth before pushing to git
+    url: 'https://api.api-ninjas.com/v1/recipe?query=' + query,
+    headers: { 'X-Api-Key': 'R7MQ/gHf0xql30zzgucgcA==FxF0MP3I7Mx0bJdu'}, // TODO hide auth before pushing to git
     contentType: 'application/json',
     success: function(result) {
         recipeResult = result; // save result of the search
