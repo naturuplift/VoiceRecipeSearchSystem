@@ -24,6 +24,20 @@ $("#search-btn").click(function () {
       console.error("Error: ", jqXHR.responseText);
     },
   });
+// TODO change ids and classes calls
+  document.querySelector("#result-recipe").classList.toggle("invisible"); // unhide answer buttons
+
+
+// call objects:
+// For first one the recipe title recipe[0].title;
+// For first one the recipe ingredients recipe[0].ingredients;
+// For first one the recipe servings recipe[0].servings;
+// For first one the recipe instructions recipe[0].instructions;
+// can be extracted with 'for' loop until: recipe.length
+
+  for (let index = 0; index < recipeResult.length; index++) {
+    document.querySelector("#first-recipe-btn").innerHTML = recipeResult[index].title;
+  }
 });
 
 // Here one sample output from recipe API query:
