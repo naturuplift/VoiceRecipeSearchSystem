@@ -73,7 +73,7 @@ function recordRecipe() {
 
             // understand recipe
             console.log(userRequest.length)
-            if (userRequest.length > 0) {// don't return anything for empty
+            if (userRequest.length > 0) {// don't return anything for empty string
             getUserRecepy(userRequest);
             }
         };
