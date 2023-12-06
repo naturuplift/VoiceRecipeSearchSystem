@@ -25,6 +25,8 @@ $("#search-btn").click(function () {
         resultTitle.text(result[i].title);
         resultTitle.addClass('btn');
         resultTitle.addClass('btn-outline-secondary');
+        resultTitle.attr('data-toggle', 'modal');
+        resultTitle.attr('data-target', '#exampleModalCenter');
         resultButtonContainer.append(resultTitle);
       };
     },
