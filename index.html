@@ -8,17 +8,15 @@
     <title>App in Action</title>
 
     <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="./assets/css/reset.css" /> 
-   
-       
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
       integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
       crossorigin="anonymous"
     />
- <link rel="stylesheet" href="./assets/css/styles.css" />
-   
+    <link rel="stylesheet" href="./assets/css/styles.css" />
   </head>
 
   <!-- Body -->
@@ -44,13 +42,17 @@
             <a class="nav-link" href="#body"
               >Home <span class="sr-only">(current)</span></a
             >
-             <li class="nav-item active">
+          </li>
+
+          <li class="nav-item active">
             <a class="nav-link" href="#body"
               >Previous Searches <span class="sr-only">(current)</span></a
             >
-             <li class="nav-item active">
+          </li>
 
-           <li class="nav-item dropdown">
+          <li class="nav-item active"></li>
+
+          <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle"
               href="#"
@@ -63,16 +65,18 @@
               Explore More
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="https://www.amazon.ca/dp/B0CKV2D99K?psc=1&ref=ppx_yo2ov_dt_b_product_details"
-              target="_blank">Buy Recipe Notebook</a>
+              <a
+                class="dropdown-item"
+                href="https://www.amazon.ca/dp/B0CKV2D99K?psc=1&ref=ppx_yo2ov_dt_b_product_details"
+                target="_blank"
+                >Buy Recipe Notebook</a
+              >
               <a class="dropdown-item" href="#">Another action</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
           </li>
-
         </ul>
-        
       </div>
     </nav>
 
@@ -106,8 +110,9 @@
                 >
                   Use your voice
                 </button>
+              </div>
               <!-- Removed the stop, verify audio and send buttons -->
-               
+
               <div class="col">
                 <button
                   id="clear-btn"
@@ -132,18 +137,61 @@
         </form>
       </div>
     </div>
-<!--Search Recipe Results-->
-<div id="recipeResultsList">
-  <h2>Results:</h2>
-  <li>
-    <ol>
-  </ol></li>
+    <!--Search Recipe Results-->
+    <div class="recipeResultsList" id="recipeResultsList">
+      <h2>Top 10 Results:</h2>
+      <!-- Button trigger modal -->
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-toggle="modal"
+        data-target="#exampleModalCenter"
+      >
+        Launch demo modal
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-toggle="modal"
+        data-target="#exampleModalCenter"
+      >
+        Launch demo modal
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-toggle="modal"
+        data-target="#exampleModalCenter"
+      >
+        Launch demo modal
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-toggle="modal"
+        data-target="#exampleModalCenter"
+      >
+        Launch demo modal
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-toggle="modal"
+        data-target="#exampleModalCenter"
+      >
+        Launch demo modal
+      </button>
+    </div>
+    <!-- Removed list of results and replaced with modal
+      <ol>
+        <li>sdf</li>
+      </ol>
+    </div> -->
 
-</div>
 
-<!--Add the modal here-->
+    <!--Modify the modal here-->
 
-<div id="result-recipe" class="col-lg-6 col-xxl-4 my-5 mx-auto invisible">
+    <div id="result-recipe" class="col-lg-6 col-xxl-4 my-5 mx-auto invisible">
   <div class="d-grid gap-2">
     <button class="btn btn-outline-secondary recipe-result-title" type="button">Secondary action</button>
     <button class="btn btn-primary recipe-result-title" type="button">Primary action</button>
@@ -154,20 +202,67 @@
   </div>
 </div>
 
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModalCenter"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">
+              Modal title
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">Add here the ingredients</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">See more</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <!-- Adding the boxes for Recipe and Previous 10 Searches-->
+    <!-- Adding the boxes for Recipe
+moved the previous 10 searches to the bottom of the page -->
 
     <div class="row">
-      <div class="col col-8">
+      <div class="col">
         <div class="recipe-details-box rounded">
           <h2 class="recipe-title" id="title">Name of Recipe</h2>
 
-          <p class="recipe-details" >Servings: <p id="servings"> 123</p>
-          <p class="recipe-details" >Ingredients: <p id="ingredients"> <li><ul>123</ul></li></p>
+          <p class="recipe-details">Servings:</p>
+          <p id="servings">123</p>
+          <p class="recipe-details">Ingredients:</p>
+          <p id="ingredients">
+            <li>
+              <ul>
+                123
+              </ul>
+            </li>
+          </p>
 
-          <p lass="recipe-details" >Instructions: </p>
-          
-            <p id="instruction"> 
+          <p lass="recipe-details">Instructions:</p>
+
+          <p id="instruction">
             Recipe detailsRecipe detailsRecipe detailsRecipe detailsRecipe
             detailsRecipe detailsRecipe detailsRecipe detailsRecipe
             detailsRecipe detailsRecipe detailsRecipe detailsRecipe
@@ -176,19 +271,99 @@
           </p>
         </div>
       </div>
-      <!--Still working on formatting this, add border-->
-      <div class="col col-4">
-        <div class="previous-searches rounded">
-          <h2>Previous 10 Searches:</h2>
-          <li id="previous-searches">
-            <ul></ul>
-          </li>
+
+    </div>
+
+    <!--Still working on formatting this, add border-->
+    <!--Search Recipe Results-->
+    <div class="previous-searches" id="previous-searches">
+      <h2>Previous 10 Searches:</h2>
+      <!-- Button trigger modal -->
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-toggle="modal"
+        data-target="#exampleModalCenter"
+      >
+        Launch demo modal
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-toggle="modal"
+        data-target="#exampleModalCenter"
+      >
+        Launch demo modal
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-toggle="modal"
+        data-target="#exampleModalCenter"
+      >
+        Launch demo modal
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-toggle="modal"
+        data-target="#exampleModalCenter"
+      >
+        Launch demo modal
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-toggle="modal"
+        data-target="#exampleModalCenter"
+      >
+        Launch demo modal
+      </button>
+    </div>
+    <!--Modify the modal here-->
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModalCenter"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">
+              Modal title
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">Add here the ingredients</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">See more</button>
+          </div>
+
         </div>
       </div>
     </div>
-    <!--From here on is  the Wit original code--> 
+
+    <!--From here on is  the Wit original code-->
     <!-- removed the original record, verify and send to wit -->
-   
 
     <!-- Recipe search this will be a separate JS file to perform task -->
 
@@ -208,15 +383,15 @@
       integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
       crossorigin="anonymous"
     ></script>
-     <script src="./assets/script/listen.js"></script>
+    <script src="./assets/script/listen.js"></script>
 
     <script src="./assets/script/understand.js"></script>
     <script src="./assets/script/search.js"></script>
     <script src="./assets/script/relevantrecipe.js"></script>
     <script src="./assets/script/retrieverecipe.js"></script>
-    
+
     <footer class="footer">
-      <h2>Made with ❤️ by Samantha, Maika & Arnaldo</h2>
+      <span class="text-muted">Made with ❤️ by Samantha, Maika & Arnaldo</span>
       <p>&copy; 2023 Voice Recipe Search System.</p>
     </footer>
   </body>
