@@ -14,15 +14,15 @@ $("#search-btn").click(function () {
   // TODO uncoment when want to use recipe API
   $.ajax({
     method: "GET",
-    url: "https://api.api-ninjas.com/v1/recipe?query=" + query,
-    headers: { "X-Api-Key": "HwswvW2ZgW1gs+or2YpduA==YlWBpTpOTVnFXBF0" }, // TODO hide auth before pushing to git
+    url: "https://api.spoonacular.com/recipes/complexSearch?query=" + query,
+    headers: { "X-Api-Key": "8ed9b997410c46de90674787041efc93" }, // TODO hide auth before pushing to git
     contentType: "application/json",
     success: function (result) {
       recipeResult = result; // save result of the search
       console.log(result);
       for (i = 0; i < result.length; i++) {
         let resultTitle = $('<button>');
-        resultTitle.text(result[i].title);
+        resultTitle.text(result[i].results.title);
         resultTitle.addClass('btn');
         resultTitle.addClass('btn-outline-secondary');
         resultTitle.attr('data-toggle', 'modal');
