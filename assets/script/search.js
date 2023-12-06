@@ -1,7 +1,7 @@
 // Recipe search state: determine the specific details of
 // the recipe requested such as dishes, ingredients, cuisine
 // userRecipe = "tiramisu"; // TODO uncomment when want to use user recipe request from audio
-// let recipeResult = []; // TODO confirm if we need to reset previous result
+let recipeResult = []; // TODO confirm if we need to reset previous result
 
 // add listeners for recipe search
 $("#search-btn").click(function () {
@@ -36,7 +36,7 @@ $("#search-btn").click(function () {
 // can be extracted with 'for' loop until: recipe.length
 
   for (let index = 0; index < recipeResult.length; index++) {
-    document.querySelector("#first-recipe-btn").innerHTML = recipeResult[index].title;
+    document.querySelector(".recipe-result-title").innerHTML = recipeResult[index].title;
   }
 });
 
