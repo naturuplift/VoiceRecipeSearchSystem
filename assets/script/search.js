@@ -2,6 +2,7 @@
 // the recipe requested such as dishes, ingredients, cuisine
 // userRecipe = "tiramisu"; // TODO uncomment when want to use user recipe request from audio
 let recipeResult = []; // TODO confirm if we need to reset previous result
+let resultButtonContainer = $('.result-button-container');
 
 // add listeners for recipe search
 $("#search-btn").click(function () {
@@ -19,6 +20,13 @@ $("#search-btn").click(function () {
     success: function (result) {
       recipeResult = result; // save result of the search
       console.log(result);
+      for (i = 0; i < result.length; i++) {
+        let resultTitle = $('<button>');
+        resultTitle.text(result[i].title);
+        resultTitle.addClass('btn');
+        resultTitle.addClass('btn-outline-secondary');
+        resultButtonContainer.append(resultTitle);
+      };
     },
     error: function ajaxError(jqXHR) {
       console.error("Error: ", jqXHR.responseText);
@@ -35,9 +43,6 @@ $("#search-btn").click(function () {
 // For first one the recipe instructions recipe[0].instructions;
 // can be extracted with 'for' loop until: recipe.length
 
-  for (let index = 0; index < recipeResult.length; index++) {
-    document.querySelector(".recipe-result-title").innerHTML = recipeResult[index].title;
-  }
 });
 
 // Here one sample output from recipe API query:
