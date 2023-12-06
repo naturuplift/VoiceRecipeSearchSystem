@@ -3,12 +3,15 @@
 
 let recipeOptions; // TODO uncomment when want to use user recipe request from audio
 
+
+
 function startRecipeResult(recipeResult) {
     
     // document.querySelector("#result-recipe").classList.toggle("invisible"); // unhide answer buttons
     document.querySelector("#recipeResultsList").classList.toggle("invisible"); // unhide answer buttons
     console.log('Fetch Successful:',recipeResult)
 
+    // setTimeout(showRecipeResult(recipeResult), 1000);
     showRecipeResult(recipeResult)
 }
 
@@ -19,6 +22,8 @@ function showRecipeResult(RecipeOpions) {
     recipeOptions = RecipeOpions;
     $(".recipe-1 img").attr("src",recipeOptions.results[0].image);
     $(".recipe-1 h5").text(recipeOptions.results[0].title);
+    $(".recipe-2 img").attr("src",recipeOptions.results[1].image);
+    $(".recipe-2 h5").text(recipeOptions.results[1].title);
     // $(".btn2").text(recipeOptions.results[1].title);
     // $(".btn3").text(recipeOptions.results[2].title);
     // $(".btn4").text(recipeOptions.results[3].title);

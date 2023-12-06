@@ -2,9 +2,13 @@ userRecipe = "pasta"; // TODO uncomment when want to use user recipe request fro
 
 // add listeners for recipe search
 $("#search-btn").click(function () {
+    recipeComplexSearch(userRecipe);
+});
+
+function recipeComplexSearch(query) {
     // console.log("click search.js running");
     // assign query search to interpreted recipe
-    let query = userRecipe;
+    // let query = userRecipe;
     let auth = 'apiKey=7e2a3c66efb74a6498304d006515450f';
     let number = 'number=6';
     // Recipe search state: use a recipe API https://api-ninjas.com/api/recipe
@@ -14,4 +18,8 @@ $("#search-btn").click(function () {
     fetch(uri)
         .then(response => { return response.json(); })
         .then(data => { startRecipeResult(data); });
-});
+}
+
+function recipeInformation(){
+
+}
