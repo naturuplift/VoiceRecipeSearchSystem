@@ -17,9 +17,21 @@ function recipeComplexSearch(query) {
     const uri = 'https://api.spoonacular.com/recipes/complexSearch?query=' + query + '&' + auth + '&' + number;
     fetch(uri)
         .then(response => { return response.json(); })
-        .then(data => { startRecipeResult(data); });
+        .then(data => { startRecipeResult(data); 
+        
+        localStorage.setItem('recipeData', JSON.stringify(data))});
 }
 
 function recipeInformation(){
+    let auth = 'apiKey=7e2a3c66efb74a6498304d006515450f';
+    let recipeID = '631814';
+
+    const url4ID = 'https://api.spoonacular.com/recipes/' + recipeID + '/information';
+
+    fetch(url4ID)
+        .then(response => { return response.json(); })
+        .then(data => { getRecipeInfo(data); });
 
 }
+
+console.log(recipeInformation);
