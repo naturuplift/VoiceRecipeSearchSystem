@@ -10,7 +10,7 @@ function recipeComplexSearch(query) {
     // assign query search to interpreted recipe
     // let query = userRecipe;
     let auth = 'apiKey=7e2a3c66efb74a6498304d006515450f';
-    let number = 'number=6';
+    let number = 'number=10';
     // Recipe search state: use a recipe API https://api-ninjas.com/api/recipe
     //  to search for relevant recipes based on the user's criteria
     // TODO uncoment when want to use recipe 

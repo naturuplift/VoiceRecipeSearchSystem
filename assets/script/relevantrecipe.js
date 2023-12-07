@@ -20,16 +20,28 @@ function startRecipeResult(recipeResult) {
 function showRecipeResult(RecipeOpions) {
 
     recipeOptions = RecipeOpions;
-    $(".recipe-1 img").attr("src",recipeOptions.results[0].image);
-    $(".recipe-1 h5").text(recipeOptions.results[0].title);
-    $(".recipe-2 img").attr("src",recipeOptions.results[1].image);
-    $(".recipe-2 h5").text(recipeOptions.results[1].title);
-    // $(".btn2").text(recipeOptions.results[1].title);
-    // $(".btn3").text(recipeOptions.results[2].title);
-    // $(".btn4").text(recipeOptions.results[3].title);
-    // $(".btn5").text(recipeOptions.results[4].title);
-    // $(".btn6").text(recipeOptions.results[5].title);
-
+        
+    $("#recipe-1 img").attr("src",recipeOptions.results[0].image);
+    $("#recipe-1 h5").text(recipeOptions.results[0].title);
+    $("#recipe-2 img").attr("src",recipeOptions.results[1].image);
+    $("#recipe-2 h5").text(recipeOptions.results[1].title);
+    $("#recipe-3 img").attr("src",recipeOptions.results[2].image);
+    $("#recipe-3 h5").text(recipeOptions.results[2].title);
+    $("#recipe-4 img").attr("src",recipeOptions.results[3].image);
+    $("#recipe-4 h5").text(recipeOptions.results[3].title);
+    $("#recipe-5 img").attr("src",recipeOptions.results[4].image);
+    $("#recipe-5 h5").text(recipeOptions.results[4].title);
+    $("#recipe-6 img").attr("src",recipeOptions.results[5].image);
+    $("#recipe-6 h5").text(recipeOptions.results[5].title);
+    $("#recipe-7 img").attr("src",recipeOptions.results[6].image);
+    $("#recipe-7 h5").text(recipeOptions.results[6].title);
+    $("#recipe-8 img").attr("src",recipeOptions.results[7].image);
+    $("#recipe-8  h5").text(recipeOptions.results[7].title);
+    $("#recipe-9 img").attr("src",recipeOptions.results[8].image);
+    $("#recipe-9  h5").text(recipeOptions.results[8].title);
+    $("#recipe-10 img").attr("src",recipeOptions.results[9].image);
+    $("#recipe-10  h5").text(recipeOptions.results[9].title);
+    
     
 
     // recipeOptions = RecipeOpions;
@@ -46,11 +58,11 @@ function showRecipeResult(RecipeOpions) {
     //     // resultTitle.attr('data-target', '#exampleModalCenter');
     //     // resultButtonContainer.append(resultTitle);
     // };
-}
+    };
 
 //Here may need to use modals to display different recipe options
 // we we don't need retrieverecipe.js as the recipe is already retrieved
-
+showRecipeResult();
 
 
 
