@@ -21,7 +21,7 @@ fetch(uri, {headers: {Authorization: auth}})
     })
     .then(function(data) {
             // console.log(data)  // TODO to comment when functions working
-            console.log(data.entities["dish:dish"][0].body)  // TODO to comment when functions working
+            // console.log(data.entities["dish:dish"][0].body)  // TODO to comment when functions working
             const dishBody = data.entities["dish:dish"][0].body;
             userRecipe = dishBody;
     });
