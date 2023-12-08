@@ -2,6 +2,8 @@
 // to use the result of userRequest on search.js
 let userRecipe; // intitialize global variable
 
+// getUserRecepy("Give me instructions on making lasagna");// TODO to comment when done testing
+
 // Use Wit.ai which is a natural language processing (NLP) platform
 // - used for building applications that can understand and interpret human language
 //  Goal is to train wit.ai applications to understand the intent behind user input
@@ -20,8 +22,8 @@ fetch(uri, {headers: {Authorization: auth}})
         return response.json();
     })
     .then(function(data) {
-            // console.log(data)  // TODO to comment when functions working
-            // console.log(data.entities["dish:dish"][0].body)  // TODO to comment when functions working
+            console.log(data)  // TODO to comment when functions working
+            console.log(data.entities["dish:dish"][0].body)  // TODO to comment when functions working
             const dishBody = data.entities["dish:dish"][0].body;
             userRecipe = dishBody;
     });
