@@ -9,7 +9,7 @@ function recipeComplexSearch(query) {
     // console.log("click search.js running");
     // assign query search to interpreted recipe
     // let query = userRecipe;
-    let auth = 'apiKey=7e2a3c66efb74a6498304d006515450f';
+    let auth = 'apiKey=3a12b110705e48fab6dd9e0ae25f9a15';
     let number = 'number=10';
     // Recipe search state: use a recipe API https://api-ninjas.com/api/recipe
     //  to search for relevant recipes based on the user's criteria
@@ -23,7 +23,7 @@ function recipeComplexSearch(query) {
 }
 
 function recipeInformation(){
-    let auth = 'apiKey=7e2a3c66efb74a6498304d006515450f';
+    let auth = 'apiKey=3a12b110705e48fab6dd9e0ae25f9a15';
     let recipeID = '631814';
 
     const url4ID = 'https://api.spoonacular.com/recipes/' + recipeID + '/information';
