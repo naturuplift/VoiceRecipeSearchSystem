@@ -1,26 +1,18 @@
 // Displaying state: present user with a list of
 // relevant recipes options
 
-userRecipe = "lasagna"; // TODO uncomment when want to use user recipe request from audio
-query = userRecipe;
-let recipesBody;
-let recipeOptions; // TODO uncomment when want to use user recipe request from input text or audio
-
-let AUTH = 'apiKey=3a12b110705e48fab6dd9e0ae25f9a15';
-let NUMBER = 'number=9'; // recipes search number
-const uri = 'https://api.spoonacular.com/recipes/complexSearch?query=' + query + '&' + AUTH + '&' + NUMBER;
 
 
-recipeOptions = searchRecipes(uri);
 
-console.log('Received recipeOptions', recipeOptions);
+// recipeOptions = searchRecipes(uri);
+// console.log('Received recipeOptions', recipeOptions);
 
-startRecipeResult(recipeSearchResponse);
+// startRecipeResult(recipeSearchResponse);
 
 function startRecipeResult(recipeResult) {
     
     // document.querySelector("#result-recipe").classList.toggle("invisible"); // unhide answer buttons
-    document.querySelector("#recipeResultsList").classList.toggle("invisible"); // unhide answer buttons
+    
     // console.log('Fetch Successful:',recipeResult)
 
     // setTimeout(showRecipeResult(recipeResult), 1000);
