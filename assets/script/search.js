@@ -1,37 +1,59 @@
-userRecipe = "pasta"; // TODO uncomment when want to use user recipe request from audio
+userRecipe = "lasagna"; // TODO uncomment when want to use user recipe request from audio
+let recipeSearchResponse;  // intitialize global variable for 
 
 // add listeners for recipe search
 $("#search-btn").click(function () {
-    recipeComplexSearch(userRecipe);
+    recipeSearch();
 });
 
-function recipeComplexSearch(query) {
-    // console.log("click search.js running");
-    // assign query search to interpreted recipe
-    // let query = userRecipe;
-    let auth = 'apiKey=3a12b110705e48fab6dd9e0ae25f9a15';
-    let number = 'number=10';
-    // Recipe search state: use a recipe API https://api-ninjas.com/api/recipe
-    //  to search for relevant recipes based on the user's criteria
-    // TODO uncoment when want to use recipe 
-    const uri = 'https://api.spoonacular.com/recipes/complexSearch?query=' + query + '&' + auth + '&' + number;
-    fetch(uri)
-        .then(response => { return response.json(); })
-        .then(data => { startRecipeResult(data); 
-        
-        localStorage.setItem('recipeData', JSON.stringify(data))});
+function recipeSearch(){
+
+    query = userRecipe;
+    let recipesBody;
+    let recipeOptions; // TODO uncomment when want to use user recipe request from input text or audio
+
+    let AUTH = 'apiKey=3a12b110705e48fab6dd9e0ae25f9a15';
+    let NUMBER = 'number=9'; // recipes search number
+    const uri = 'https://api.spoonacular.com/recipes/complexSearch?query=' + query + '&' + AUTH + '&' + NUMBER;
+
+    // save to local storage last search recipeName, recipeId
+    //  before writing over variable recipeSearchResponse
+    if(recipeSearchResponse !== undefined){ // TODO uncomment this once figure how to check
+        // console.log(recipeSearchResponse) // TODO uncomment when want to test
+        // console.log('I am saving to local storage, YAY!') // TODO uncomment when want to test
+        saveToLocalStorage(recipeSearchResponse); // TODO for empty variable
+    }
+
+    fetchData(uri).then(data => {
+        // once fetch respond with data then run this code:
+        recipeSearchResponse = data;
+
+        document.querySelector("#recipeResultsList").classList.toggle("invisible"); // unhide answer buttons
+        // showRecipeResult(recipeSearchResponse);
+
+        for (let index = 0; index < recipeSearchResponse.results.length; index++) {
+
+            // Concatenate the loop index with the class name
+            let className1 = ".recipe-" + (index + 1) + " img";
+            let className2 = ".recipe-" + (index + 1) + " h5";
+
+            // Use the concatenated class name to select the appropriate element
+            $(className1).attr("src", recipeSearchResponse.results[index].image);
+            $(className2).text(recipeSearchResponse.results[index].title);
+        }
+
+    });
 }
 
-function recipeInformation(){
-    let auth = 'apiKey=3a12b110705e48fab6dd9e0ae25f9a15';
-    let recipeID = '631814';
-
-    const url4ID = 'https://api.spoonacular.com/recipes/' + recipeID + '/information';
-
-    fetch(url4ID)
-        .then(response => { return response.json(); })
-        .then(data => { getRecipeInfo(data); });
-
+// here we pass the url we want to call from API and await until fetch responds
+async function fetchData(url) {
+    const fetcher = await fetch(url)
+    const data = await fetcher.json();
+    return data;
 }
 
-console.log(recipeInformation);
+//
+function saveToLocalStorage(recipesToSave) {
+    //add some functionality that saves recipes to local storage
+    // last search recipeName, recipeId
+}
