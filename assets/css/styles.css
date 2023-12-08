@@ -39,7 +39,7 @@ h2 {
 }
 
 .recipe-details-box {
-  background-image: url("/bootcamp-project-one/assets/img/recipe_background.jpg");
+  background-image: url("../img/recipe_background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   padding: 100px;
