@@ -27,6 +27,7 @@ function recipeSearch(){
     fetchData(uri).then(data => {
         // once fetch respond with data then run this code:
         recipeSearchResponse = data;
+        console.log(data);
 
         document.querySelector("#recipeResultsList").classList.toggle("invisible"); // unhide answer buttons
         // showRecipeResult(recipeSearchResponse);
