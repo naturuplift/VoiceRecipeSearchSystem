@@ -17,6 +17,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
   <!-- Body -->
@@ -85,16 +86,31 @@
         <h1 class="display-4">Find recipes from your favorite meals!</h1>
         <form>
           <div class="form-group">
+
+            
+
             <label for="exampleFormControlTextarea1"
               >Use your voice or type the name of your favorite recipe in the
               white box.</label
             >
+            <div class="row">
+              <div class="col">
             <textarea
               class="form-control"
               id="exampleFormControlTextarea1"
               rows="3"
             ></textarea>
 
+<div class="col">
+             <button>
+                <i id="record-btn"
+                  enabled class="fa fa-microphone btn btn-light" style="font-size:36px" 
+                  type="button"
+                   ></i></button>
+           
+</div>
+</div>
+</div>
             <!--Adding columns-->
 
             
@@ -102,14 +118,23 @@
               <div class="col">
                 <!--Adding the record to text code / Copy of existing-->
                 <!-- To start/stop audio recording -->
-                <button
+                <button>
+                <i id="record-btn"
+                  enabled class="fa fa-microphone btn btn-light" style="font-size:36px" 
+                  type="button"
+                   ></i></button>
+</div>
+
+                <!-- <button
                   id="record-btn"
                   enabled
                   type="button"
                   class="btn btn-light"
                 >
                   Use your voice
-                </button>
+                </button> -->
+
+
               </div>
               <!-- Removed the stop, verify audio and send buttons -->
 
