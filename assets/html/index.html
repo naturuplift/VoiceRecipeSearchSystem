@@ -8,7 +8,7 @@
     <title>Voice to Recipe🎤</title>
 
     <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="../css/reset.css" />
 
     <link
       rel="stylesheet"
@@ -16,7 +16,7 @@
       integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
@@ -24,8 +24,9 @@
   <body class="container">
     <!--NavBar-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light container">
-      <img src="./assets/img/logo2.JPG" class="logo">
+      <img src="../img/logo2.JPG" class="logo">
       <!-- <a class="navbar-brand" href="#">Voice to Recipe</a> -->
+      
       <button
         class="navbar-toggler"
         type="button"
@@ -41,7 +42,7 @@
       <div class="collapse navbar-collapse container" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="./index.html"
+            <a class="nav-link" href="../../index.html"
               >Home <span class="sr-only">(current)</span></a
             >
           </li>
@@ -81,163 +82,8 @@
         </ul>
       </div>
     </nav>
-
-    <div class="jumbotron jumbotron-fluid jumbotronBackground">
-      <div class="container">
-        <h1 class="display-4">Find recipes from your favorite meals!</h1>
-        <form>
-          <div class="form-group">
-
-            
-
-            <label for="exampleFormControlTextarea1"
-              >Use your voice or type the name of your favorite recipe in the
-              white box.</label
-            >
-            <div class="row">
-              <div class="col">
-            <textarea
-              class="form-control"
-              id="exampleFormControlTextarea1"
-              rows="3"
-            ></textarea>
-<!-- Adding the microphone button inline with search text -->
-  <!-- To start/stop audio recording -->
-                   <!-- Original button, added microphone icon and class fa-->
-                   <div class="col">
-            
-<button
-                  id="record-btn"
-                  enabled
-                  type="button"
-                  class="btn btn-light fa"
-                  style="font-size:36px" 
-              >
-                  &#xf130;
-                </button> 
-                   <div class="col">
-                   <button
-                  id="search-btn"
-                  type="button"
-                  class="btn btn-outline-success my-2 my-sm-0"
-                >
-                  Search
-                </button>
-              </div>
-           
-</div>
-</div>
-</div>
-
-        </form>
-      </div>
-    </div>
-
     <div>
-      
-      <!-- Button trigger modal -->
-    
-    <!--Search Recipe Results-->
-    <div class="row row-cols-1 row-cols-md-2 g-4 invisible" id="recipeResultsList">
-
-      <div class="col recipe-1">
-        <div class="card">
-          <img src="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text"></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col recipe-2">
-        <div class="card">
-          <img src="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text"></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col recipe-3">
-        <div class="card">
-          <img src="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text"></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col recipe-4">
-        <div class="card">
-          <img src="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text"></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col recipe-5">
-        <div class="card">
-          <img src="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text"></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col recipe-6">
-        <div class="card">
-          <img src="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text"></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col recipe-7">
-        <div class="card">
-          <img src="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text"></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col recipe-8">
-        <div class="card">
-          <img src="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text"></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col recipe-9">
-        <div class="card">
-          <img src="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text"></p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <!--Modify the modal here-->
-
-<div id="result-recipe" class="col-lg-6 col-xxl-4 my-5 mx-auto">
-  <div class="d-grid gap-2 result-button-container">
-  </div>
-</div>
-
+   
     <!-- Modal -->
     <div
       class="modal fade"
@@ -419,12 +265,12 @@ moved the previous 10 searches to the bottom of the page -->
       integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
       crossorigin="anonymous"
     ></script>
-    <script src="./assets/script/listen.js"></script>
+    <script src="../script/listen.js"></script>
 
-    <script src="./assets/script/understand.js"></script>
-    <script src="./assets/script/search.js"></script>
-    <script src="./assets/script/relevantrecipe.js"></script>
-    <script src="./assets/script/retrieverecipe.js"></script>
+    <script src="../script/understand.js"></script>
+    <script src="../script/search.js"></script>
+    <script src="../script/relevantrecipe.js"></script>
+    <script src="../script/retrieverecipe.js"></script>
 
     <!-- <footer class="footer">
       <span class="text-muted">Made with ❤️ by Samantha, Maika & Arnaldo</span>

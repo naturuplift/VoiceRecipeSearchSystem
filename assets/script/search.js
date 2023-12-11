@@ -57,4 +57,9 @@ async function fetchData(url) {
 function saveToLocalStorage(recipesToSave) {
     //add some functionality that saves recipes to local storage
     // last search recipeName, recipeId
-}
+    localStorage.setItem("recipeId", JSON.stringify(recipeSearchResponse));
+    
+};
+
+saveToLocalStorage();
+
