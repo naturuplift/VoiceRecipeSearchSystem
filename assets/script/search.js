@@ -1,37 +1,51 @@
-userRecipe = "lasagna"; // TODO uncomment when want to use user recipe request from audio
-let recipeSearchResponse;  // intitialize global variable for 
+// userRecipe = "lasagna"; // TODO uncomment when want to use user recipe request from audio
+let recipeSearchResponse;  // intitialize global variable for searching recipe options
+let isFirstTime = true; // to toggle cards once
 
-// add listeners for recipe search
-$("#search-btn").click(function () {
-    recipeSearch();
-});
+// searchRecipeOptions('GetRecipe','chicken soup noodles');
 
-function recipeSearch(){
+// In the function searchRecipeOptions, the first input is
+// the type of recipe API call, second is the name of recipe or ingredients
+// or null if looking for random recipe
+function searchRecipeOptions(searchType,searchRecipe){
 
-    query = userRecipe;
-    let recipesBody;
-    let recipeOptions; // TODO uncomment when want to use user recipe request from input text or audio
+    // depending on user intent search recipe for type of search
+    if (searchType === 'GetRecipe'){
+        // for searchType GetRecipe fetch list of recipes
+        console.log('Fetching GetRecipe types')
+        getRecipeList(searchRecipe);
+        
+    } else if (searchType ===  'GetRecipeByIngredient') {
+        // for searchType GetRecipeByIngredient fetch list of recipes
+        console.log('Fetching GetRecipeByIngredient types')
 
-    let AUTH = 'apiKey=3a12b110705e48fab6dd9e0ae25f9a15';
-    let NUMBER = 'number=9'; // recipes search number
-    const uri = 'https://api.spoonacular.com/recipes/complexSearch?query=' + query + '&' + AUTH + '&' + NUMBER;
+    } else if (searchType === 'GetRandomRecipe') {
+        // for searchType GetRandomRecipe fetch list of recipes
+        console.log('Fetching GetRandomRecipe types')
 
-    // save to local storage last search recipeName, recipeId
-    //  before writing over variable recipeSearchResponse
-    if(recipeSearchResponse !== undefined){ // TODO uncomment this once figure how to check
-        // console.log(recipeSearchResponse) // TODO uncomment when want to test
-        // console.log('I am saving to local storage, YAY!') // TODO uncomment when want to test
-        saveToLocalStorage(recipeSearchResponse); // TODO for empty variable
     }
+}
+
+function getRecipeList(userRecipeList){
+
+    let query = userRecipeList;
+    let AUTH = 'apiKey=3a12b110705e48fab6dd9e0ae25f9a15';
+    // let NUMBER = 'number=9'; // recipes search number
+    // const uri = 'https://api.spoonacular.com/recipes/complexSearch?query=' + query + '&' + AUTH + '&' + NUMBER;
+    const uri = 'https://api.spoonacular.com/recipes/complexSearch?query=' + query + '&' + AUTH;
 
     fetchData(uri).then(data => {
         // once fetch respond with data then run this code:
         recipeSearchResponse = data;
         console.log(data);
-
-        document.querySelector("#recipeResultsList").classList.toggle("invisible"); // unhide answer buttons
         // showRecipeResult(recipeSearchResponse);
 
+        if (isFirstTime) {
+            // toggle card to be visible the fist time only
+            $("#recipeResultsList").toggleClass("invisible");
+            isFirstTime = false;  // Update the flag
+        }
+        
         for (let index = 0; index < recipeSearchResponse.results.length; index++) {
 
             // Concatenate the loop index with the class name
@@ -41,15 +55,18 @@ function recipeSearch(){
             // Use the concatenated class name to select the appropriate element
             $(className1).attr("src", recipeSearchResponse.results[index].image);
             $(className2).text(recipeSearchResponse.results[index].title);
+            // $(className2).show(); // TODO check display of card
+            // save each card to local 
+            // save to local storage last search recipeName, recipeId
         }
 
-        for (let index = 0; index < recipeSearchResponse.results.length; index++) {
-            $('.card').each(function() {
-                var recipeCardId = $(this).parent().attr("id");
-                var resultsId = recipeSearchResponse.results[index].id;
-                localStorage.setItem(recipeCardId, JSON.stringify(resultsId));
-            });
-        };
+        // for (let index = 0; index < recipeSearchResponse.results.length; index++) {
+        //     $('.card').each(function() {
+        //         var recipeCardId = $(this).parent().attr("id");
+        //         var resultsId = recipeSearchResponse.results[index].id;
+        //         localStorage.setItem(recipeCardId, JSON.stringify(resultsId));
+        //     });
+        // };
         
         localStorage.setItem("recipeInfo", JSON.stringify(recipeSearchResponse));
     });

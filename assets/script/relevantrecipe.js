@@ -5,4 +5,5 @@ function recipeInfoFetch() {
     cardClick.on('click', function(){
         
     })
-};
+}
+
