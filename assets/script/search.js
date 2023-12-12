@@ -40,21 +40,39 @@ function getRecipeList(userRecipeList){
         console.log(data);
         // showRecipeResult(recipeSearchResponse);
 
-        if (isFirstTime) {
-            // toggle card to be visible the fist time only
-            $("#recipeResultsList").toggleClass("invisible");
-            isFirstTime = false;  // Update the flag
-        }
-        
+        // if (isFirstTime) {
+
+        //     // Remove the "invisible" class
+        //     $("#recipeResultsList").removeClass("invisible");
+
+        //     // // toggle card to be visible the fist time only
+        //     // $("#recipeResultsList").toggleClass("invisible");
+        //     isFirstTime = false;  // Update the flag
+        // }
+
         for (let index = 0; index < recipeSearchResponse.results.length; index++) {
 
+            var recipeCard = `
+                <div class="col recipe-${index}" id="recipe-${index}">
+                    <div class="card">
+                        <img src="${recipeSearchResponse.results[index].image}">
+                        <div class="card-body">
+                            <h5 class="card-title">${recipeSearchResponse.results[index].title}</h5>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            $("#recipeResultsList").append(recipeCard);
+
             // Concatenate the loop index with the class name
-            let className1 = "#recipe-" + (index + 1) + " img";
-            let className2 = "#recipe-" + (index + 1) + " h5";
+            // let className1 = "#recipe-" + (index + 1) + " img";
+            // let className2 = "#recipe-" + (index + 1) + " h5";
 
             // Use the concatenated class name to select the appropriate element
-            $(className1).attr("src", recipeSearchResponse.results[index].image);
-            $(className2).text(recipeSearchResponse.results[index].title);
+            // $(className1).attr("src", recipeSearchResponse.results[index].image);
+            // $(className2).text(recipeSearchResponse.results[index].title);
             // $(className2).show(); // TODO check display of card
             // save each card to local 
             // save to local storage last search recipeName, recipeId
