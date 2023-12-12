@@ -12,6 +12,7 @@ function searchRecipeOptions(searchType,searchRecipe){
     // depending on user intent search recipe for type of search
     if (searchType === 'GetRecipe'){
         // for searchType GetRecipe fetch list of recipes
+        $("#recipeResultsList").empty();
         console.log('Fetching GetRecipe types')
         getRecipeList(searchRecipe);
         
@@ -52,6 +53,7 @@ function getRecipeList(userRecipeList){
 
         for (let index = 0; index < recipeSearchResponse.results.length; index++) {
 
+            // created card into html and add recipe picture and title
             var recipeCard = `
                 <div class="col recipe-${index}" id="recipe-${index}">
                     <div class="card">
@@ -66,9 +68,6 @@ function getRecipeList(userRecipeList){
 
             $("#recipeResultsList").append(recipeCard);
 
-            // Concatenate the loop index with the class name
-            // let className1 = "#recipe-" + (index + 1) + " img";
-            // let className2 = "#recipe-" + (index + 1) + " h5";
 
             // Use the concatenated class name to select the appropriate element
             // $(className1).attr("src", recipeSearchResponse.results[index].image);
