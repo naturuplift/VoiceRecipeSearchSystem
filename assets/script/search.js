@@ -66,7 +66,8 @@ function getRecipeList(userRecipeList){
             $(indexClick).on('click', function() {
                 // The click event handling for recipe
                 console.log(`Card ${index + 1} clicked on recipe ${recipeSearchResponse.results[index].title}!`)
-                recipeInfoFetch(recipeSearchResponse.results[index].id);
+                recipeInfoFetch(recipeSearchResponse.results[index].id); 
+                window.location.href = './recipecard.html';
             });
         }
     });
