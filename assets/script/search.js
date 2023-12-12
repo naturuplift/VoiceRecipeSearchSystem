@@ -1,7 +1,5 @@
 // userRecipe = "lasagna"; // TODO uncomment when want to use user recipe request from audio
 let recipeSearchResponse;  // intitialize global variable for searching recipe options
-let isFirstTime = true; // to toggle cards once
-
 // searchRecipeOptions('GetRecipe','chicken soup noodles');
 
 // In the function searchRecipeOptions, the first input is
@@ -41,16 +39,6 @@ function getRecipeList(userRecipeList){
         console.log(data);
         // showRecipeResult(recipeSearchResponse);
 
-        // if (isFirstTime) {
-
-        //     // Remove the "invisible" class
-        //     $("#recipeResultsList").removeClass("invisible");
-
-        //     // // toggle card to be visible the fist time only
-        //     // $("#recipeResultsList").toggleClass("invisible");
-        //     isFirstTime = false;  // Update the flag
-        // }
-
         for (let index = 0; index < recipeSearchResponse.results.length; index++) {
 
             // created card into html and add recipe picture and title
@@ -67,6 +55,8 @@ function getRecipeList(userRecipeList){
             `;
 
             $("#recipeResultsList").append(recipeCard);
+
+            // localStorage.setItem("recipeId", JSON.stringify(recipeSearchResponse));
 
 
             // Use the concatenated class name to select the appropriate element
@@ -85,7 +75,7 @@ function getRecipeList(userRecipeList){
         //     });
         // };
         
-        localStorage.setItem("recipeInfo", JSON.stringify(recipeSearchResponse));
+    
     });
 }
 
@@ -95,14 +85,3 @@ async function fetchData(url) {
     const data = await fetcher.json();
     return data;
 }
-
-//
-// function saveToLocalStorage(recipesToSave) {
-//     //add some functionality that saves recipes to local storage
-//     // last search recipeName, recipeId
-//     localStorage.setItem("recipeId", JSON.stringify(recipeSearchResponse));
-    
-// };
-
-// saveToLocalStorage();
-
