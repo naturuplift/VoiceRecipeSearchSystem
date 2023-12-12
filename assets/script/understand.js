@@ -48,12 +48,18 @@ fetch(uri, {headers: {Authorization: auth}})
         console.log(userWitSearch.intents[0].name) // TODO to comment when functions working
         userIntent = userWitSearch.intents[0].name;
 
-        // get recipe
+        if (userWitSearch.entities["dish:dish"] !== 0) {
+            // get recipe
         console.log(userWitSearch.entities["dish:dish"][0].body) // TODO to comment when functions working
         userRecipe = userWitSearch.entities["dish:dish"][0].body;
-
+        console.log('dish Wit functionality')
         // Understanding state transition to the "recipe search state"
         searchRecipeOptions(userIntent,userRecipe);
+        } else if (userWitSearch.entities["ingredient:ingredient"] !== 0) {
+            console.log('ingredient Wit functionality')
+            // Understanding state transition to the "recipe search state"
+        searchRecipeOptions(userIntent,userRecipe);
+        }
     });
 }
 

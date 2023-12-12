@@ -3,11 +3,13 @@ let cardClick = $('.card');
 let IdSearchResponse;
 let storedRecipeData;
 
-    function getId() {
-        storedRecipeData = JSON.parse(localStorage.getItem('recipeData'));
-        console.log(storedRecipeData);
-    
-    };
+function recipeInfoFetch(recipeSelected) {
+
+    console.log(recipeSelected)
+    // cardClick.on('click', function(){
+    //     console 
+    // })
+}
 
     cardClick.on('click', getId()); 
 
