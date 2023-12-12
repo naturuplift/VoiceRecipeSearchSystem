@@ -64,7 +64,7 @@ function getRecipeList(userRecipeList){
             let indexClick = `.recipe-${index}`;
             // Here adding a click event listener to the card
             $(indexClick).on('click', function() {
-                // Your click event handling code goes here
+                // The click event handling for recipe
                 console.log(`Card ${index + 1} clicked on recipe ${recipeSearchResponse.results[index].title}!`)
                 recipeInfoFetch(recipeSearchResponse.results[index].id);
             });
