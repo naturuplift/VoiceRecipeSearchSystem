@@ -1,12 +1,16 @@
-userRecipe = "lasagna"; // TODO uncomment when want to use user recipe request from audio
+// userRecipe = "lasagna"; // TODO uncomment when want to use user recipe request from audio
 let recipeSearchResponse;  // intitialize global variable for 
 
-// add listeners for recipe search
-$("#search-btn").click(function () {
-    recipeSearch();
-});
 
 function recipeSearch(){
+
+    // if (intent == GetRandomRecipe){
+    //     https://api.spoonacular.com/recipes/random
+    // } else if (intent ==  GetRecipeByIngredient) {
+    //     https://api.spoonacular.com/recipes/findByIngredients
+    // } else {
+    //     https://api.spoonacular.com/recipes/complexSearch
+    // }
 
     query = userRecipe;
     let recipesBody;
@@ -41,6 +45,8 @@ function recipeSearch(){
             // Use the concatenated class name to select the appropriate element
             $(className1).attr("src", recipeSearchResponse.results[index].image);
             $(className2).text(recipeSearchResponse.results[index].title);
+            // $(className2).show(); // TODO check display of card
+            // save each card to local storage
         }
 
     });
@@ -61,5 +67,5 @@ function saveToLocalStorage(recipesToSave) {
     
 };
 
-saveToLocalStorage();
+// saveToLocalStorage();
 
