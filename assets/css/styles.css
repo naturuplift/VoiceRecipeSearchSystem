@@ -53,6 +53,7 @@ h2 {
 .card img {
   width: 250px;
   height: 200px;
+  padding: 10px;
 }
 
 .recipe-details-box {
@@ -66,7 +67,6 @@ h2 {
 }
 .previous-searches {
   text-align: center;
-  align-items: center;
 }
 
 button img {
