@@ -24,6 +24,10 @@ h1 {
 h2 {
   text-align: center;
 }
+.previous-searches-size {
+  font-size: small;
+}
+
 .form-group {
   text-align: center;
 }
@@ -35,10 +39,20 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 15px;
 }
 .recipeResultsList {
   border-style: ridge;
   border-color: rgba(255, 136, 102, 0.67);
+}
+
+.card {
+  align-items: center;
+}
+
+.card img {
+  width: 250px;
+  height: 200px;
 }
 
 .recipe-details-box {
@@ -51,18 +65,15 @@ h2 {
   color: blue;
 }
 .previous-searches {
-  text-align: left;
+  text-align: center;
+  align-items: center;
 }
 
 button img {
   width: 150px;
   height: 100px;
 }
-/* .previous-searches-img {
-  display: inline-block;
-  width: 100%;
-  height: 60px;
-} */
+
 .footer {
   position: absolute;
   text-align: center;
