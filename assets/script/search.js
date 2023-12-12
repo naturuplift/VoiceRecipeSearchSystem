@@ -1,8 +1,6 @@
 // userRecipe = "lasagna"; // TODO uncomment when want to use user recipe request from audio
 let recipeSearchResponse;  // intitialize global variable for searching recipe options
-let isFirstTime = true; // to toggle cards once
-
-// searchRecipeOptions('GetRecipe','chicken soup noodles');
+// searchRecipeOptions('GetRecipe','chicken soup noodles'); // use when testing without user input
 
 // In the function searchRecipeOptions, the first input is
 // the type of recipe API call, second is the name of recipe or ingredients
@@ -12,17 +10,19 @@ function searchRecipeOptions(searchType,searchRecipe){
     // depending on user intent search recipe for type of search
     if (searchType === 'GetRecipe'){
         // for searchType GetRecipe fetch list of recipes
-        $("#recipeResultsList").empty();
         console.log('Fetching GetRecipe types')
+        $("#recipeResultsList").empty();
         getRecipeList(searchRecipe);
         
     } else if (searchType ===  'GetRecipeByIngredient') {
         // for searchType GetRecipeByIngredient fetch list of recipes
         console.log('Fetching GetRecipeByIngredient types')
+        $("#recipeResultsList").empty();
 
     } else if (searchType === 'GetRandomRecipe') {
         // for searchType GetRandomRecipe fetch list of recipes
         console.log('Fetching GetRandomRecipe types')
+        $("#recipeResultsList").empty();
 
     }
 }
@@ -39,19 +39,19 @@ function getRecipeList(userRecipeList){
         // once fetch respond with data then run this code:
         recipeSearchResponse = data;
         console.log(data);
-        // showRecipeResult(recipeSearchResponse);
 
-        // if (isFirstTime) {
-
-        //     // Remove the "invisible" class
-        //     $("#recipeResultsList").removeClass("invisible");
-
-        //     // // toggle card to be visible the fist time only
-        //     // $("#recipeResultsList").toggleClass("invisible");
-        //     isFirstTime = false;  // Update the flag
-        // }
+        // Store data in local storage
+        localStorage.setItem('recipeData', JSON.stringify(recipeSearchResponse.results));
 
         for (let index = 0; index < recipeSearchResponse.results.length; index++) {
+
+            // variables to store recipe to local storage
+            // var id = recipeSearchResponse.results[index].id;
+            // var title = recipeSearchResponse.results[index].title;
+            // var image = recipeSearchResponse.results[index].image;
+
+            // // Store data in local storage
+            // localStorage.setItem('recipeData', JSON.stringify(recipeSearchResponse.results[index]));
 
             // created card into html and add recipe picture and title
             var recipeCard = `
@@ -67,25 +67,7 @@ function getRecipeList(userRecipeList){
             `;
 
             $("#recipeResultsList").append(recipeCard);
-
-
-            // Use the concatenated class name to select the appropriate element
-            // $(className1).attr("src", recipeSearchResponse.results[index].image);
-            // $(className2).text(recipeSearchResponse.results[index].title);
-            // $(className2).show(); // TODO check display of card
-            // save each card to local 
-            // save to local storage last search recipeName, recipeId
         }
-
-        // for (let index = 0; index < recipeSearchResponse.results.length; index++) {
-        //     $('.card').each(function() {
-        //         var recipeCardId = $(this).parent().attr("id");
-        //         var resultsId = recipeSearchResponse.results[index].id;
-        //         localStorage.setItem(recipeCardId, JSON.stringify(resultsId));
-        //     });
-        // };
-        
-        localStorage.setItem("recipeInfo", JSON.stringify(recipeSearchResponse));
     });
 }
 
@@ -95,14 +77,3 @@ async function fetchData(url) {
     const data = await fetcher.json();
     return data;
 }
-
-//
-// function saveToLocalStorage(recipesToSave) {
-//     //add some functionality that saves recipes to local storage
-//     // last search recipeName, recipeId
-//     localStorage.setItem("recipeId", JSON.stringify(recipeSearchResponse));
-    
-// };
-
-// saveToLocalStorage();
-
