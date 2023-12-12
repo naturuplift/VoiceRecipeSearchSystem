@@ -31,7 +31,7 @@ function searchRecipeOptions(searchType,searchRecipe){
 function getRecipeList(userRecipeList){
 
     let query = userRecipeList;
-    let AUTH = 'apiKey=3a12b110705e48fab6dd9e0ae25f9a15';
+    let AUTH = 'apiKey=8ed9b997410c46de90674787041efc93';
     // let NUMBER = 'number=9'; // recipes search number
     // const uri = 'https://api.spoonacular.com/recipes/complexSearch?query=' + query + '&' + AUTH + '&' + NUMBER;
     const uri = 'https://api.spoonacular.com/recipes/complexSearch?query=' + query + '&' + AUTH;
@@ -66,7 +66,8 @@ function getRecipeList(userRecipeList){
             $(indexClick).on('click', function() {
                 // The click event handling for recipe
                 console.log(`Card ${index + 1} clicked on recipe ${recipeSearchResponse.results[index].title}!`)
-                recipeInfoFetch(recipeSearchResponse.results[index].id);
+                recipeInfoFetch(recipeSearchResponse.results[index].id); 
+                window.location.href = './recipecard.html';
             });
         }
     });
