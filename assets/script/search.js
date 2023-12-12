@@ -39,8 +39,8 @@ function recipeSearch(){
         for (let index = 0; index < recipeSearchResponse.results.length; index++) {
 
             // Concatenate the loop index with the class name
-            let className1 = ".recipe-" + (index + 1) + " img";
-            let className2 = ".recipe-" + (index + 1) + " h5";
+            let className1 = "#recipe-" + (index + 1) + " img";
+            let className2 = "#recipe-" + (index + 1) + " h5";
 
             // Use the concatenated class name to select the appropriate element
             $(className1).attr("src", recipeSearchResponse.results[index].image);
@@ -49,6 +49,15 @@ function recipeSearch(){
             // save each card to local storage
         }
 
+        for (let index = 0; index < recipeSearchResponse.results.length; index++) {
+            $('.card').each(function() {
+                var recipeCardId = $(this).parent().attr("id");
+                var resultsId = recipeSearchResponse.results[index].id;
+                localStorage.setItem(recipeCardId, JSON.stringify(resultsId));
+            });
+        };
+        
+        localStorage.setItem("recipeInfo", JSON.stringify(recipeSearchResponse));
     });
 }
 
@@ -60,12 +69,12 @@ async function fetchData(url) {
 }
 
 //
-function saveToLocalStorage(recipesToSave) {
-    //add some functionality that saves recipes to local storage
-    // last search recipeName, recipeId
-    localStorage.setItem("recipeId", JSON.stringify(recipeSearchResponse));
+// function saveToLocalStorage(recipesToSave) {
+//     //add some functionality that saves recipes to local storage
+//     // last search recipeName, recipeId
+//     localStorage.setItem("recipeId", JSON.stringify(recipeSearchResponse));
     
-};
+// };
 
 // saveToLocalStorage();
 

@@ -54,7 +54,7 @@ function recordRecipe() {
 
         // the speech recognition service start
         recognition.start();
-        console.log("Start recording voice");
+        console.log("Start recording voice"); // TODO to comment when done testing
 
         // clear the text result on the page
         $("#response").text("");
@@ -72,7 +72,7 @@ function recordRecipe() {
             $("#exampleFormControlTextarea1").text(recognizedSpeech);
 
             // understand recipe
-            console.log(userRequest.length)
+            // console.log(userRequest.length) // TODO to comment when done testing
             if (userRequest.length > 0) {// don't return anything for empty string
             getUserRecepy(userRequest);
             }
