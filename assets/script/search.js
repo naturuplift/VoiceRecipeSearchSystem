@@ -27,6 +27,7 @@ function searchRecipeOptions(searchType,searchRecipe){
     }
 }
 
+// search for a list of recipes with query userRecipeList
 function getRecipeList(userRecipeList){
 
     let query = userRecipeList;
@@ -45,14 +46,6 @@ function getRecipeList(userRecipeList){
 
         for (let index = 0; index < recipeSearchResponse.results.length; index++) {
 
-            // variables to store recipe to local storage
-            // var id = recipeSearchResponse.results[index].id;
-            // var title = recipeSearchResponse.results[index].title;
-            // var image = recipeSearchResponse.results[index].image;
-
-            // // Store data in local storage
-            // localStorage.setItem('recipeData', JSON.stringify(recipeSearchResponse.results[index]));
-
             // created card into html and add recipe picture and title
             var recipeCard = `
                 <div class="col recipe-${index}" id="recipe-${index}">
@@ -67,6 +60,14 @@ function getRecipeList(userRecipeList){
             `;
 
             $("#recipeResultsList").append(recipeCard);
+
+            let indexClick = `.recipe-${index}`;
+            // Here adding a click event listener to the card
+            $(indexClick).on('click', function() {
+                // Your click event handling code goes here
+                console.log(`Card ${index + 1} clicked on recipe ${recipeSearchResponse.results[index].title}!`)
+                recipeInfoFetch(recipeSearchResponse.results[index].id);
+            });
         }
     });
 }

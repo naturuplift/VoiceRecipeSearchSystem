@@ -1,9 +1,11 @@
 $('.previous-searches').hide();
 let cardClick = $('.card');
 
-function recipeInfoFetch() {
-    cardClick.on('click', function(){
-        
-    })
+function recipeInfoFetch(recipeSelected) {
+
+    console.log(recipeSelected)
+    // cardClick.on('click', function(){
+    //     console 
+    // })
 }
 
