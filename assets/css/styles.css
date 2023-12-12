@@ -53,6 +53,16 @@ h2 {
 .previous-searches {
   text-align: left;
 }
+
+button img {
+  width: 150px;
+  height: 100px;
+}
+/* .previous-searches-img {
+  display: inline-block;
+  width: 100%;
+  height: 60px;
+} */
 .footer {
   position: absolute;
   text-align: center;
