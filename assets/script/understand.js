@@ -57,7 +57,13 @@ fetch(uri, {headers: {Authorization: auth}})
             // Understanding state transition to the "recipe search state"
             searchRecipeOptions(userIntent,userRecipe);
 
-        } else { // anithing else use intent GetRecipe
+        } else if (Object.keys(userWitSearch.entities).length === 0) { // anything else ask user to input recipe
+
+            // console.log(userWitSearch.entities)
+            console.log('Not a valid recipe entered. Try Again!')
+
+        } else if (userWitSearch.intents[0].name === "GetRecipe" && Object.keys(userWitSearch.entities).length !== 0){ //use intent GetRecipe
+            
             // get Intent
             userIntent = userWitSearch.intents[0].name; // TODO delete this
             console.log(userIntent)
@@ -68,7 +74,7 @@ fetch(uri, {headers: {Authorization: auth}})
 
             console.log('Wit dish functionality')  // TODO to comment when functions working
             // Understanding state transition to the "recipe search state"
-            searchRecipeOptions(userIntent,userRecipe);
+            searchRecipeOptions(userIntent,userRecipe);              
         }
     });
 }

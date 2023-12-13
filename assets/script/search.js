@@ -35,7 +35,7 @@ function getRecipeList(userRecipeList){
 
     // configure recipe API method and parameters
     let query = userRecipeList;
-    let AUTH = 'apiKey=3a12b110705e48fab6dd9e0ae25f9a15';
+    let AUTH = 'apiKey=8ed9b997410c46de90674787041efc93';
     const uri = 'https://api.spoonacular.com/recipes/complexSearch?query=' + query + '&' + AUTH;
 
     fetchData(uri).then(data => {
@@ -90,7 +90,7 @@ function getRecipeByIngredients(userIngredientsList){
     // configure recipe API method and parameters
     let recipeIngredients = userIngredientsList;
     let recipeParameters = 'fillIngredients=false&ignorePantry=true';
-    let AUTH = 'apiKey=3a12b110705e48fab6dd9e0ae25f9a15';
+    let AUTH = 'apiKey=8ed9b997410c46de90674787041efc93';
     const uri = 'https://api.spoonacular.com/recipes/findByIngredients?' + AUTH + '&' + 'ingredients=' + recipeIngredients + '&' + recipeParameters;
 
     // console.log(uri)
@@ -137,7 +137,7 @@ function getRandomRecipe(){
 
     // configure recipe API method and parameters
     let number = 'number=6';
-    let AUTH = 'apiKey=3a12b110705e48fab6dd9e0ae25f9a15';
+    let AUTH = 'apiKey=8ed9b997410c46de90674787041efc93';
     const uri = 'https://api.spoonacular.com/recipes/random?' + AUTH + '&' + number;
 
     fetchData(uri).then(data => {
