@@ -13,8 +13,7 @@ function searchRecipeOptions(searchType,searchRecipe){
         // for searchType GetRecipe fetch list of recipes
         console.log('Fetching GetRecipe types')
         $("#recipeResultsList").empty();
-        // getRecipeList(searchRecipe); // TODO enable when done working with other function calls
-        getRandomRecipe();
+        getRecipeList(searchRecipe); // TODO enable when done working with other function calls
         
     } else if (searchType ===  'GetRecipeByIngredient') {
         // for searchType GetRecipeByIngredient fetch list of recipes
