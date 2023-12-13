@@ -7,13 +7,13 @@ let recipeSearchResponse;  // intitialize global variable for searching recipe o
 // the type of recipe API call, second is the name of recipe or ingredients
 // or null if looking for random recipe
 function searchRecipeOptions(searchType,searchRecipe){
-
+    
     // depending on user intent search recipe for type of search
     if (searchType === 'GetRecipe'){
         // for searchType GetRecipe fetch list of recipes
         console.log('Fetching GetRecipe types')
         $("#recipeResultsList").empty();
-        getRecipeList(searchRecipe);
+        getRecipeList(searchRecipe); // TODO enable when done working with other function calls
         
     } else if (searchType ===  'GetRecipeByIngredient') {
         // for searchType GetRecipeByIngredient fetch list of recipes
