@@ -60,10 +60,13 @@ function recipeInfoFetch(recipeSelected) {
     console.log(storedData);
 
     for (let index = 0; index < storedData.length; index++) {
-      console.log("I am ${index} loop");
-
+     
       // created card into html and add recipe picture and title
       var recipeCard = `
+  
+            // created card into html for previous search and add recipe picture and title
+            var recipeCard = `
+
                 <div class="previous-searches-${index}" id="previous-searches-${index}">
                     <div class="card previous-searches">
                         <img class="previous-searches-img" src="${recipeSearchResponse.results[index].image}">
@@ -75,9 +78,24 @@ function recipeInfoFetch(recipeSelected) {
                 </div>
             `;
 
+
       $("#recipeResultsList").append(recipeCard);
     }
   });
+            $("#recipeResultsList").append(recipeCard);
+
+            let indexClick = `.previous-searches-${index}`;
+            // Here adding a click event listener to the card
+            $(indexClick).on('click', function() {
+                // The click event handling for recipe
+                console.log(`Card ${index + 1} clicked on previous recipe ${recipeSearchResponse.results[index].title}!`)
+                recipeInfoFetch(recipeSearchResponse.results[index].id); 
+                // window.location.href = './recipecard.html';
+            });
+        }
+   
+    });
+
 }
 
 // here we pass the url we want to call from API and await until fetch responds
