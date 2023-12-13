@@ -41,14 +41,15 @@ fetch(uri, {headers: {Authorization: auth}})
     // That is, turn the message into actionable search query for recipe
     .then(function(data) {
         
-        // console.log(data)  // TODO to comment when functions working
+        console.log(data)  // TODO to comment when functions working
 
         userWitSearch = data; // save Wit result to global variable
 
-        console.log(userWitSearch.intents[0].name,userWitSearch.entities["dish:dish"][0].body) // TODO to comment when functions working
+        // console.log(userWitSearch.intents[0].name,userWitSearch.entities["dish:dish"][0].body) // TODO to comment when functions working
 
         // get Intent
-        userIntent = userWitSearch.intents[0].name;
+        userIntent = userWitSearch.intents[0].name; // TODO delete this
+        // userIntent = 'GetRandomRecipe'; // TODO delete this 💩
         // get recipe
         userRecipe = userWitSearch.entities["dish:dish"][0].body;
 
