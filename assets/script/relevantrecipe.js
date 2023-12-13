@@ -19,8 +19,21 @@ function recipeInfoFetch(recipeSelected) {
     fetchData(requestUrl).then(data => {
            // once fetch respond with data then run this code:
            idSearchResponse = data;
-           console.log(data);
+           console.log(data)
 
+        // Define the stopping point text
+        var stoppingPointText = 'If you like this recipe';
+        // Remove <a> tags from the summary
+        let summaryWithoutLinks = idSearchResponse.summary.replace(/<a\b[^>]*>(.*?)<\/a>/g, '');
+        var stoppingPointIndex = summaryWithoutLinks.indexOf(stoppingPointText);
+        var textBeforeStoppingPoint = stoppingPointIndex !== -1 ? summaryWithoutLinks.substring(0, stoppingPointIndex) : summaryWithoutLinks;
+        
+        console.log(textBeforeStoppingPoint)
+
+        let ingredientRecipe = `${idSearchResponse.extendedIngredients.map((item, index) => (
+            `<li>${item.original}</li>`
+          )).join('')}`;
+        console.log(ingredientRecipe)
 
         // create html element for recipe selected
             let recipeShow = `
@@ -29,19 +42,16 @@ function recipeInfoFetch(recipeSelected) {
                 <div class="recipe-details-box rounded">
                 <h2 class="recipe-title" id="title">${idSearchResponse.title}</h2>
                 <img src="${idSearchResponse.image}">
+                
                 <p class="recipe-details"><b>Summary:</b></p>
-                <p id="servings">${idSearchResponse.summary}</p>
+                <p id="servings">${textBeforeStoppingPoint}</p>
                 <p class="recipe-details"><b>Servings:</b></p>
                 <p id="servings">${idSearchResponse.servings}</p>
-                <p class="recipe-details"><b>Ingredients:</b></p>
-                <p id="ingredients">
-                    <li>
-                    <ul>
-                        123
-                    </ul>
-                    </li>
-                </p>
 
+                <p class="recipe-details"><b>Ingredients:</b></p>
+                <ul id="ingredients">
+                ${ingredientRecipe}
+                </ul>
                 <p lass="recipe-details"><b>Instructions:</b></p>
 
                 <p id="instruction">
