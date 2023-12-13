@@ -46,6 +46,7 @@ function getRecipeList(userRecipeList){
 
         // Store data in local storage
         localStorage.setItem('recipeData', JSON.stringify(recipeSearchResponse.results));
+        $('#recipeResultsList').removeClass('hide');
 
         for (let index = 0; index < recipeSearchResponse.results.length; index++) {
 
