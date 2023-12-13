@@ -55,14 +55,14 @@ function recipeInfoFetch(recipeSelected) {
       <div class="col">
         <div class="recipe-details-box rounded">
           <h2 class="recipe-title" id="title">${idSearchResponse.title}</h2>
-          <img src="${idSearchResponse.image}">
+          <img class="recipe-img" src="${idSearchResponse.image}">
           <p class="recipe-details"><b>Summary:</b></p>
           <p id="servings">${textBeforeStoppingPoint}</p>
           <p class="recipe-details"><b>Servings:</b></p>
           <p id="servings">${idSearchResponse.servings}</p>
           <p class="recipe-details"><b>Ingredients:</b></p>
           <ul id="ingredients">${ingredientRecipe}</ul>
-          <p lass="recipe-details"><b>Instructions:</b></p>
+          <p class="recipe-details"><b>Instructions:</b></p>
           <p id="instruction">${idSearchResponse.instructions}</p>
         </div>
       </div>
