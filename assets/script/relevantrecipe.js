@@ -11,7 +11,7 @@ function recipeInfoFetch(recipeSelected) {
   console.log(recipeSelected);  // TODO comment when no longer needed
   //insert id from local storage
   let queryId = recipeSelected;
-  let AUTH = "apiKey=3a12b110705e48fab6dd9e0ae25f9a15";
+  let AUTH = "apiKey=8ed9b997410c46de90674787041efc93";
 
   const requestUrl = "https://api.spoonacular.com/recipes/" + queryId + "/information?" + AUTH;
 
