@@ -1,20 +1,20 @@
-$('.previous-searches').hide();
+$(".previous-searches").hide();
 
 let idSearchResponse;
 
 function recipeInfoFetch(recipeSelected) {
-    
-    // window.location.href = './recipecard.html';
+  // window.location.href = './recipecard.html';
 
-    // to hide recipe cards
-    $("#recipeResultsList").empty();
+  // to hide recipe cards
+  $("#recipeResultsList").empty();
 
-    console.log(recipeSelected);
-    //insert id from local storage
-    let queryId = recipeSelected;
-    let AUTH = 'apiKey=47a06039c35d428ab526ad39948d7b16';
+  console.log(recipeSelected);
+  //insert id from local storage
+  let queryId = recipeSelected;
+  let AUTH = "apiKey=47a06039c35d428ab526ad39948d7b16";
 
-    const requestUrl = 'https://api.spoonacular.com/recipes/' + queryId + '/information?' + AUTH;
+  const requestUrl =
+    "https://api.spoonacular.com/recipes/" + queryId + "/information?" + AUTH;
 
     fetchData(requestUrl).then(data => {
            // once fetch respond with data then run this code:
@@ -63,23 +63,24 @@ function recipeInfoFetch(recipeSelected) {
             </div>
             `;
 
-        // add to html code above
-        $("#recipeResultsList").append(recipeShow);
+    // add to html code above
+    $("#recipeResultsList").append(recipeShow);
 
+    // console.log('Just before data')
+    var storedData = JSON.parse(localStorage.getItem("recipeData"));
+    console.log(storedData);
 
-        // console.log('Just before data')
-        var storedData = JSON.parse(localStorage.getItem('recipeData'));
-        console.log(storedData)
-
-        for (let index = 0; index < storedData.length; index++) {
-
-
-            
+    for (let index = 0; index < storedData.length; index++) {
+     
+      // created card into html and add recipe picture and title
+      var recipeCard = `
+  
             // created card into html for previous search and add recipe picture and title
             var recipeCard = `
+
                 <div class="previous-searches-${index}" id="previous-searches-${index}">
-                    <div class="card">
-                        <img src="${recipeSearchResponse.results[index].image}">
+                    <div class="card previous-searches">
+                        <img class="previous-searches-img" src="${recipeSearchResponse.results[index].image}">
                         <div class="card-body">
                             <h5 class="card-title">${recipeSearchResponse.results[index].title}</h5>
                             <p class="card-text"></p>
@@ -88,6 +89,10 @@ function recipeInfoFetch(recipeSelected) {
                 </div>
             `;
 
+
+      $("#recipeResultsList").append(recipeCard);
+    }
+  });
             $("#recipeResultsList").append(recipeCard);
 
             let indexClick = `.previous-searches-${index}`;
@@ -101,11 +106,12 @@ function recipeInfoFetch(recipeSelected) {
         }
    
     });
+
 }
-    
+
 // here we pass the url we want to call from API and await until fetch responds
 async function fetchData(requestUrl) {
-    const fetcher = await fetch(requestUrl)
-    const data = await fetcher.json();
-    return data;
+  const fetcher = await fetch(requestUrl);
+  const data = await fetcher.json();
+  return data;
 }

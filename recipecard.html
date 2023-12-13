@@ -1,13 +1,3 @@
-<!-- READ THIS!!!
-This html does not have the css working. I just copy and pasted what I did in ./assets/html/index.html
-I found this html after I finish the other one. SORRY! :(
-
-I'm not sure how to make all the javascript work on the otherone and probably we will have to fix 
-this one to make it work. That's why I didn't want to delete this.
-
-But let me know -->
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -151,7 +141,7 @@ moved the previous 10 searches to the bottom of the page -->
             </li>
           </p>
 
-          <p lass="recipe-details">Instructions:</p>
+          <p class="recipe-details" contenteditable="recipe-details">Instructions:</p>
 
           <p id="instruction">
             Recipe detailsRecipe detailsRecipe detailsRecipe detailsRecipe
@@ -168,11 +158,19 @@ moved the previous 10 searches to the bottom of the page -->
     <!--Still working on formatting this, add border-->
     <!--Search Recipe Results-->
     <div class="previous-searches" id="previous-searches">
-      <h2>Previous 10 Searches:</h2>
+      <h2>Previous Searches:</h2>
       <!-- Button trigger modal -->
       <button
         type="button"
-        class="btn btn-primary"
+        class="btn btn-primary previous-searches-btn recipe-1"
+        data-toggle="modal"
+        data-target="#exampleModalCenter"
+      >
+        Launch demo modal
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary previous-searches-btn recipe-2"
         data-toggle="modal"
         data-target="#exampleModalCenter"
       >
@@ -188,7 +186,7 @@ moved the previous 10 searches to the bottom of the page -->
       </button>
       <button
         type="button"
-        class="btn btn-primary"
+        class="btn btn-primary previous-searches-btn recipe-3"
         data-toggle="modal"
         data-target="#exampleModalCenter"
       >
@@ -196,15 +194,7 @@ moved the previous 10 searches to the bottom of the page -->
       </button>
       <button
         type="button"
-        class="btn btn-primary"
-        data-toggle="modal"
-        data-target="#exampleModalCenter"
-      >
-        Launch demo modal
-      </button>
-      <button
-        type="button"
-        class="btn btn-primary"
+        class="btn btn-primary previous-searches-btn recipe-4"
         data-toggle="modal"
         data-target="#exampleModalCenter"
       >
