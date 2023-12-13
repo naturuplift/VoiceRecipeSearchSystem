@@ -80,6 +80,15 @@ function recipeInfoFetch(recipeSelected) {
             `;
 
             $("#recipeResultsList").append(recipeCard);
+
+            let indexClick = `.previous-searches-${index}`;
+            // Here adding a click event listener to the card
+            $(indexClick).on('click', function() {
+                // The click event handling for recipe
+                console.log(`Card ${index + 1} clicked on previous recipe ${recipeSearchResponse.results[index].title}!`)
+                recipeInfoFetch(recipeSearchResponse.results[index].id); 
+                // window.location.href = './recipecard.html';
+            });
         }
    
     });
