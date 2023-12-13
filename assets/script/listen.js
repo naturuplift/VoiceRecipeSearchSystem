@@ -16,7 +16,7 @@ const SpeechRecognitionEvent =
 
 // add listeners for record audio
 $("#record-btn").click(function () {
-  $(".input-text-recipe").text('');
+  $(".form-control").text('');
   recordRecipe();
 });
 
@@ -70,7 +70,7 @@ function recordRecipe() {
             userRequest = recognizedSpeech;
 
             // Display the recognized text on the page
-            $(".input-text-recipe").text(recognizedSpeech);
+            $("#exampleFormControlTextarea1").text(recognizedSpeech);
 
             // understand recipe
             // console.log(userRequest.length) // TODO to comment when done testing
