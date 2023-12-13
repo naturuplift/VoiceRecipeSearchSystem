@@ -144,7 +144,7 @@ function getRandomRecipe(){
     fetchData(uri).then(data => {
         // once fetch respond with data then run this code:
         recipeSearchResponse = data;
-        // console.log(data);
+        console.log(data);
 
         // create container element to save to local storage
         let recipeElements = [];

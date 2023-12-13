@@ -9,7 +9,7 @@ let userWitSearch; // intitialize global Wit variable
 $("#search-btn").click(function () {
 
     // read text input from user
-    var searchInputValue = $('#exampleFormControlTextarea1').val();
+    var searchInputValue = $('.form-control').val();
 
     // check if there is text to search for recipe
     if (searchInputValue.length > 0) {
@@ -59,8 +59,10 @@ fetch(uri, {headers: {Authorization: auth}})
 
         } else if (Object.keys(userWitSearch.entities).length === 0) { // anything else ask user to input recipe
 
-            // console.log(userWitSearch.entities)
-            console.log('Not a valid recipe entered. Try Again!')
+            let userMessage = 'Not a valid recipe entered. Try Again!';
+            console.log(userMessage)
+            // Display the recognized text on the page
+            $("#exampleFormControlTextarea1").text(userMessage);
 
         } else if (Object.keys(userWitSearch.entities).length !== 0 && userWitSearch.intents[0].name === "GetRecipe"){ //use intent GetRecipe
             
