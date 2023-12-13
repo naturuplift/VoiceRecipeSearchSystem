@@ -1,13 +1,3 @@
-<!-- READ THIS!!!
-This html does not have the css working. I just copy and pasted what I did in ./assets/html/index.html
-I found this html after I finish the other one. SORRY! :(
-
-I'm not sure how to make all the javascript work on the otherone and probably we will have to fix 
-this one to make it work. That's why I didn't want to delete this.
-
-But let me know -->
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,7 +8,7 @@ But let me know -->
     <title>Voice to Recipe🎤</title>
 
     <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
 
     <link
       rel="stylesheet"
@@ -26,7 +16,6 @@ But let me know -->
       integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
@@ -34,7 +23,7 @@ But let me know -->
   <body class="container">
     <!--NavBar-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light container">
-      <img src="../img/logo2.JPG" class="logo">
+      <img src="./assets/img/logo2.JPG" class="logo">
       <!-- <a class="navbar-brand" href="#">Voice to Recipe</a> -->
       
       <button
@@ -152,7 +141,7 @@ moved the previous 10 searches to the bottom of the page -->
             </li>
           </p>
 
-          <p lass="recipe-details">Instructions:</p>
+          <p class="recipe-details" contenteditable="recipe-details">Instructions:</p>
 
           <p id="instruction">
             Recipe detailsRecipe detailsRecipe detailsRecipe detailsRecipe
@@ -169,11 +158,19 @@ moved the previous 10 searches to the bottom of the page -->
     <!--Still working on formatting this, add border-->
     <!--Search Recipe Results-->
     <div class="previous-searches" id="previous-searches">
-      <h2>Previous 10 Searches:</h2>
+      <h2>Previous Searches:</h2>
       <!-- Button trigger modal -->
       <button
         type="button"
-        class="btn btn-primary"
+        class="btn btn-primary previous-searches-btn recipe-1"
+        data-toggle="modal"
+        data-target="#exampleModalCenter"
+      >
+        Launch demo modal
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary previous-searches-btn recipe-2"
         data-toggle="modal"
         data-target="#exampleModalCenter"
       >
@@ -189,7 +186,7 @@ moved the previous 10 searches to the bottom of the page -->
       </button>
       <button
         type="button"
-        class="btn btn-primary"
+        class="btn btn-primary previous-searches-btn recipe-3"
         data-toggle="modal"
         data-target="#exampleModalCenter"
       >
@@ -197,15 +194,7 @@ moved the previous 10 searches to the bottom of the page -->
       </button>
       <button
         type="button"
-        class="btn btn-primary"
-        data-toggle="modal"
-        data-target="#exampleModalCenter"
-      >
-        Launch demo modal
-      </button>
-      <button
-        type="button"
-        class="btn btn-primary"
+        class="btn btn-primary previous-searches-btn recipe-4"
         data-toggle="modal"
         data-target="#exampleModalCenter"
       >
@@ -275,12 +264,12 @@ moved the previous 10 searches to the bottom of the page -->
       integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
       crossorigin="anonymous"
     ></script>
-    <script src="./script/listen.js"></script>
+    <script src="./assets/script/listen.js"></script>
 
-    <script src="./script/understand.js"></script>
-    <script src="./script/search.js"></script>
-    <script src="./script/relevantrecipe.js"></script>
-    <script src="./script/retrieverecipe.js"></script>
+    <script src="./assets/script/understand.js"></script>
+    <script src="./assets/script/search.js"></script>
+    <script src="./assets/script/relevantrecipe.js"></script>
+    <script src="./assets/script/retrieverecipe.js"></script>
 
     <!-- <footer class="footer">
       <span class="text-muted">Made with ❤️ by Samantha, Maika & Arnaldo</span>

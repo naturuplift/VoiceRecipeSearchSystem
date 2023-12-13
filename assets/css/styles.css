@@ -50,28 +50,35 @@ h2 {
   align-items: center;
 }
 
+.card:hover {
+  cursor: pointer;
+}
+
 .card img {
   width: 250px;
   height: 200px;
+  align-items: center;
 }
 
 .recipe-details-box {
-  background-image: url("../img/recipe_background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   padding: 100px;
 }
 .recipe-title {
-  color: blue;
+  color: blank;
+  padding: 15px;
 }
 .previous-searches {
   text-align: center;
   align-items: center;
+  padding: 15px;
 }
 
-button img {
+.previous-searches-img {
   width: 150px;
   height: 100px;
+  align-items: center;
 }
 
 .footer {
