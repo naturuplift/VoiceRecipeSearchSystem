@@ -49,11 +49,13 @@ fetch(uri, {headers: {Authorization: auth}})
 
         // get Intent
         userIntent = userWitSearch.intents[0].name; // TODO delete this
+        console.log(userIntent)
         // userIntent = 'GetRandomRecipe'; // TODO delete this 💩
         // get recipe
         userRecipe = userWitSearch.entities["dish:dish"][0].body;
+        console.log(userRecipe)
 
-        console.log('dish Wit functionality')  // TODO to comment when functions working
+        console.log('Wit dish functionality')  // TODO to comment when functions working
         // Understanding state transition to the "recipe search state"
         searchRecipeOptions(userIntent,userRecipe);
     });
