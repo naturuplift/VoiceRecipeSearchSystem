@@ -7,7 +7,7 @@ let recipeSearchResponse;  // intitialize global variable for searching recipe o
 // the type of recipe API call, second is the name of recipe or ingredients
 // or null if looking for random recipe
 function searchRecipeOptions(searchType,searchRecipe){
-    
+
     // depending on user intent search recipe for type of search
     if (searchType === 'GetRecipe'){
         // for searchType GetRecipe fetch list of recipes
@@ -19,29 +19,30 @@ function searchRecipeOptions(searchType,searchRecipe){
         // for searchType GetRecipeByIngredient fetch list of recipes
         console.log('Fetching GetRecipeByIngredient types')
         $("#recipeResultsList").empty();
+        // getRecipeByIngredients(searchRecipe);  // TODO enable when done working with other function calls
 
     } else if (searchType === 'GetRandomRecipe') {
         // for searchType GetRandomRecipe fetch list of recipes
         console.log('Fetching GetRandomRecipe types')
         $("#recipeResultsList").empty();
-
+        // getRandomRecipe();  // TODO enable when done working with other function calls
     }
 }
 
 // search for a list of recipes with query userRecipeList
+// https://spoonacular.com/food-api/docs#Search-Recipes-Complex
 function getRecipeList(userRecipeList){
 
+    // configure recipe API method and parameters
     let query = userRecipeList;
     let AUTH = 'apiKey=47a06039c35d428ab526ad39948d7b16';
-
-    // let NUMBER = 'number=9'; // recipes search number
-    // const uri = 'https://api.spoonacular.com/recipes/complexSearch?query=' + query + '&' + AUTH + '&' + NUMBER;
     const uri = 'https://api.spoonacular.com/recipes/complexSearch?query=' + query + '&' + AUTH;
 
     fetchData(uri).then(data => {
         // once fetch respond with data then run this code:
         recipeSearchResponse = data;
-        console.log(data);
+        
+        console.log(data); // TODO uncomment to confirm recipes are returned for API recipe query
 
         // Store data in local storage
         localStorage.setItem('recipeData', JSON.stringify(recipeSearchResponse.results));
@@ -80,4 +81,101 @@ async function fetchData(url) {
     const fetcher = await fetch(url)
     const data = await fetcher.json();
     return data;
+}
+
+// search for a list of recipes given ingredients in userIngredientsList
+// https://spoonacular.com/food-api/docs#Search-Recipes-by-Ingredients
+function getRecipeByIngredients(userIngredientsList){
+
+    // configure recipe API method and parameters
+    let recipeIngredients = userIngredientsList;
+    let recipeParameters = 'fillIngredients=false&ignorePantry=true';
+    let AUTH = 'apiKey=47a06039c35d428ab526ad39948d7b16';
+    const uri = 'https://api.spoonacular.com/recipes/findByIngredients?' + AUTH + '&' + 'ingredients=' + recipeIngredients + '&' + recipeParameters;
+
+    console.log(uri)
+
+    fetchData(uri).then(data => {
+        // once fetch respond with data then run this code:
+        recipeSearchResponse = data;
+        console.log(data);
+
+        // Store data in local storage
+        localStorage.setItem('recipeByIngredientData', JSON.stringify(recipeSearchResponse));
+
+        for (let index = 0; index < recipeSearchResponse.length; index++) {
+
+            // created card into html and add recipe picture and title
+            var recipeCard = `
+                <div class="col recipe-${index}" id="recipe-${index}">
+                    <div class="card">
+                        <img src="${recipeSearchResponse[index].image}">
+                        <div class="card-body">
+                            <h5 class="card-title">${recipeSearchResponse[index].title}</h5>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            $("#recipeResultsList").append(recipeCard);
+
+            let indexClick = `.recipe-${index}`;
+            // Here adding a click event listener to the card
+            $(indexClick).on('click', function() {
+                // The click event handling for recipe
+                console.log(`Card ${index + 1} clicked on recipe ${recipeSearchResponse[index].title}!`)
+
+                recipeInfoFetch(recipeSearchResponse[index].id);
+            });
+        }
+    });
+}
+
+// search for a list of recipes with query userRecipeList
+function getRandomRecipe(){
+
+    // configure recipe API method and parameters
+    let query = userRecipeList;
+    let AUTH = 'apiKey=47a06039c35d428ab526ad39948d7b16';
+
+    // let NUMBER = 'number=9'; // recipes search number
+    // const uri = 'https://api.spoonacular.com/recipes/complexSearch?query=' + query + '&' + AUTH + '&' + NUMBER;
+    const uri = 'https://api.spoonacular.com/recipes/complexSearch?query=' + query + '&' + AUTH;
+
+    fetchData(uri).then(data => {
+        // once fetch respond with data then run this code:
+        recipeSearchResponse = data;
+        console.log(data);
+
+        // Store data in local storage
+        localStorage.setItem('recipeRandomData', JSON.stringify(recipeSearchResponse.results));
+
+        for (let index = 0; index < recipeSearchResponse.results.length; index++) {
+
+            // created card into html and add recipe picture and title
+            var recipeCard = `
+                <div class="col recipe-${index}" id="recipe-${index}">
+                    <div class="card">
+                        <img src="${recipeSearchResponse.results[index].image}">
+                        <div class="card-body">
+                            <h5 class="card-title">${recipeSearchResponse.results[index].title}</h5>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            $("#recipeResultsList").append(recipeCard);
+
+            let indexClick = `.recipe-${index}`;
+            // Here adding a click event listener to the card
+            $(indexClick).on('click', function() {
+                // The click event handling for recipe
+                console.log(`Card ${index + 1} clicked on recipe ${recipeSearchResponse.results[index].title}!`)
+
+                recipeInfoFetch(recipeSearchResponse.results[index].id);
+            });
+        }
+    });
 }
