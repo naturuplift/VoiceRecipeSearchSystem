@@ -34,11 +34,11 @@ function recipeInfoFetch(recipeSelected) {
                  <p id="servings">${idSearchResponse.servings}</p> 
                 <h3><p class="recipe-details"><b>Ingredients:</b></p></h3>
                 <p id="ingredients">
-                    <li>
-                    <ul>
-                        123
-                    </ul>
-                    </li>
+                <ul>
+                ${idSearchResponse.extendedIngredients.map((item, index) => (
+                  `<li>${item.original}</li>`
+                )).join('')}
+                </ul>
                 </p>
 
                 <h3> <p class="recipe-details"><b>Instructions:</b></p> </h3>
