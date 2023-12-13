@@ -8,7 +8,8 @@ function recipeInfoFetch(recipeSelected) {
   // to hide recipe cards
   $("#recipeResultsList").empty();
 
-  console.log(recipeSelected);
+  // show recipe id
+  // console.log(recipeSelected);  // TODO comment when no longer needed
   //insert id from local storage
   let queryId = recipeSelected;
   let AUTH = "apiKey=47a06039c35d428ab526ad39948d7b16";
@@ -21,16 +22,18 @@ function recipeInfoFetch(recipeSelected) {
     idSearchResponse = data;
     // console.log(data) // TODO comment when no longer needed
 
+    // The recipe Summary has some links and details that needs to be left out of the text
     // Define the stopping point text
     var stoppingPointText = 'If you like this recipe';
     // Remove <a> tags from the summary
-    let summaryWithoutLinks = idSearchResponse.summary.replace(/<a\b[^>]*>(.*?)<\/a>/g, '');
-    var stoppingPointIndex = summaryWithoutLinks.indexOf(stoppingPointText);
+    let summaryWithoutLinks = idSearchResponse.summary.replace(/<a\b[^>]*>(.*?)<\/a>/g, ''); // Regex to replace it
+    var stoppingPointIndex = summaryWithoutLinks.indexOf(stoppingPointText); // location of the text from where it needs to be removed
+    // manipulated recipe Summary
     var textBeforeStoppingPoint = stoppingPointIndex !== -1 ? summaryWithoutLinks.substring(0, stoppingPointIndex) : summaryWithoutLinks;
     
     // console.log(textBeforeStoppingPoint) // TODO comment when confirm that gets correct summary
 
-    // 
+    // gather ingredients from JSON idSearchResponse.extendedIngredients object list in items called 'original'
     let ingredientRecipe = `${idSearchResponse.extendedIngredients.map((item, index) => (
         `<li>${item.original}</li>`
       )).join('')}`;
@@ -63,7 +66,7 @@ function recipeInfoFetch(recipeSelected) {
 
     // get recipes (id, image and title) from local storage
     var storedData = JSON.parse(localStorage.getItem("recipeData"));
-    console.log(storedData); // TODO get recipes stored local storage, can comment when done testing 
+    // console.log(storedData); // TODO get recipes stored local storage, can comment when done testing 
 
     for (let index = 0; index < storedData.length; index++) {
     
@@ -87,7 +90,7 @@ function recipeInfoFetch(recipeSelected) {
       // Here adding a click event listener to the card
       $(indexClick).on('click', function() {
           // The click event handling for recipe
-          console.log(`Card ${index + 1} clicked on previous recipe ${recipeSearchResponse.results[index].title}!`)
+          console.log(`Card ${index + 1} clicked, with id ${recipeSearchResponse.results[index].id} on previous recipe ${recipeSearchResponse.results[index].title}!`)
           // when click on card for previous search load recipe to display it
           recipeInfoFetch(recipeSearchResponse.results[index].id); 
       });
