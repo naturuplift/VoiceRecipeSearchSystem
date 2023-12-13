@@ -2,6 +2,7 @@
 let recipeSearchResponse;  // intitialize global variable for searching recipe options
 // searchRecipeOptions('GetRecipe','chicken soup noodles'); // use when testing without user input
 
+
 // In the function searchRecipeOptions, the first input is
 // the type of recipe API call, second is the name of recipe or ingredients
 // or null if looking for random recipe
@@ -67,8 +68,8 @@ function getRecipeList(userRecipeList){
             $(indexClick).on('click', function() {
                 // The click event handling for recipe
                 console.log(`Card ${index + 1} clicked on recipe ${recipeSearchResponse.results[index].title}!`)
-                recipeInfoFetch(recipeSearchResponse.results[index].id); 
-                // window.location.href = './recipecard.html';
+
+                recipeInfoFetch(`${recipeSearchResponse.results[index].id}`);
             });
         }
     });

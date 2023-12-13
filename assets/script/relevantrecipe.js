@@ -16,32 +16,43 @@ function recipeInfoFetch(recipeSelected) {
   const requestUrl =
     "https://api.spoonacular.com/recipes/" + queryId + "/information?" + AUTH;
 
-  fetchData(requestUrl).then((data) => {
-    // once fetch respond with data then run this code:
-    idSearchResponse = data;
-    console.log(data);
+    fetchData(requestUrl).then(data => {
+           // once fetch respond with data then run this code:
+           idSearchResponse = data;
+           console.log(data)
 
-    // create html element for recipe selected
-    let recipeShow = `
+        // Define the stopping point text
+        var stoppingPointText = 'If you like this recipe';
+        // Remove <a> tags from the summary
+        let summaryWithoutLinks = idSearchResponse.summary.replace(/<a\b[^>]*>(.*?)<\/a>/g, '');
+        var stoppingPointIndex = summaryWithoutLinks.indexOf(stoppingPointText);
+        var textBeforeStoppingPoint = stoppingPointIndex !== -1 ? summaryWithoutLinks.substring(0, stoppingPointIndex) : summaryWithoutLinks;
+        
+        console.log(textBeforeStoppingPoint)
+
+        let ingredientRecipe = `${idSearchResponse.extendedIngredients.map((item, index) => (
+            `<li>${item.original}</li>`
+          )).join('')}`;
+        console.log(ingredientRecipe)
+
+        // create html element for recipe selected
+            let recipeShow = `
             <div class="row">
             <div class="col">
                 <div class="recipe-details-box rounded">
                 <h2 class="recipe-title" id="title">${idSearchResponse.title}</h2>
                 <img src="${idSearchResponse.image}">
-                <h3><p class="recipe-details"><b>Summary:</b></p></h3>
-                <p id="servings">${idSearchResponse.summary}</p>
-                <h3><p class="recipe-details"><b>Servings:</b></p></h3>
-                 <p id="servings">${idSearchResponse.servings}</p> 
-                <h3><p class="recipe-details"><b>Ingredients:</b></p></h3>
-                <p id="ingredients">
-                <ul>
-                ${idSearchResponse.extendedIngredients.map((item, index) => (
-                  `<li>${item.original}</li>`
-                )).join('')}
-                </ul>
-                </p>
+                
+                <p class="recipe-details"><b>Summary:</b></p>
+                <p id="servings">${textBeforeStoppingPoint}</p>
+                <p class="recipe-details"><b>Servings:</b></p>
+                <p id="servings">${idSearchResponse.servings}</p>
 
-                <h3> <p class="recipe-details"><b>Instructions:</b></p> </h3>
+                <p class="recipe-details"><b>Ingredients:</b></p>
+                <ul id="ingredients">
+                ${ingredientRecipe}
+                </ul>
+                <p lass="recipe-details"><b>Instructions:</b></p>
 
                 <p id="instruction">
                 ${idSearchResponse.instructions}
