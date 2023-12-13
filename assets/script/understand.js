@@ -47,17 +47,29 @@ fetch(uri, {headers: {Authorization: auth}})
 
         // console.log(userWitSearch.intents[0].name,userWitSearch.entities["dish:dish"][0].body) // TODO to comment when functions working
 
-        // get Intent
-        userIntent = userWitSearch.intents[0].name; // TODO delete this
-        console.log(userIntent)
-        // userIntent = 'GetRandomRecipe'; // TODO delete this 💩
-        // get recipe
-        userRecipe = userWitSearch.entities["dish:dish"][0].body;
-        console.log(userRecipe)
+        // if intent is for a random recipe do this
+        if (userWitSearch.intents[0].name === "GetRandomRecipe") {
+            // get Intent
+            userIntent = userWitSearch.intents[0].name; // TODO delete this
+            console.log(userIntent)
+            userRecipe = 'dummyrecipe'; // this is for random recipe so it doesn't matter
+            console.log('Wit dish functionality')  // TODO to comment when functions working
+            // Understanding state transition to the "recipe search state"
+            searchRecipeOptions(userIntent,userRecipe);
 
-        console.log('Wit dish functionality')  // TODO to comment when functions working
-        // Understanding state transition to the "recipe search state"
-        searchRecipeOptions(userIntent,userRecipe);
+        } else { // anithing else use intent GetRecipe
+            // get Intent
+            userIntent = userWitSearch.intents[0].name; // TODO delete this
+            console.log(userIntent)
+            // userIntent = 'GetRandomRecipe'; // TODO delete this 💩
+            // get recipe
+            userRecipe = userWitSearch.entities["dish:dish"][0].body;
+            console.log(userRecipe)
+
+            console.log('Wit dish functionality')  // TODO to comment when functions working
+            // Understanding state transition to the "recipe search state"
+            searchRecipeOptions(userIntent,userRecipe);
+        }
     });
 }
 
