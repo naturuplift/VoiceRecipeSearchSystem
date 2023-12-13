@@ -42,7 +42,7 @@ function getRecipeList(userRecipeList){
         // once fetch respond with data then run this code:
         recipeSearchResponse = data;
         
-        console.log(data); // TODO uncomment to confirm recipes are returned for API recipe query
+        // console.log(data); // TODO uncomment to confirm recipes are returned for API recipe query
 
         // Store data in local storage
         localStorage.setItem('recipeData', JSON.stringify(recipeSearchResponse.results));
@@ -68,8 +68,8 @@ function getRecipeList(userRecipeList){
             // Here adding a click event listener to the card
             $(indexClick).on('click', function() {
                 // The click event handling for recipe
-                console.log(`Card ${index + 1} clicked on recipe ${recipeSearchResponse.results[index].title}!`)
-
+                console.log(`Card ${index + 1} clicked, with id ${recipeSearchResponse.results[index].id} on recipe ${recipeSearchResponse.results[index].title}!`)
+                // call recipe fetch in relevantrecipe'js to show recipe to user
                 recipeInfoFetch(recipeSearchResponse.results[index].id);
             });
         }
@@ -124,8 +124,8 @@ function getRecipeByIngredients(userIngredientsList){
             // Here adding a click event listener to the card
             $(indexClick).on('click', function() {
                 // The click event handling for recipe
-                console.log(`Card ${index + 1} clicked on recipe ${recipeSearchResponse[index].title}!`)
-
+                console.log(`Card ${index + 1} clicked, with id ${recipeSearchResponse[index].id} on recipe ${recipeSearchResponse[index].title}!`)
+                // call recipe fetch in relevantrecipe'js to show recipe to user
                 recipeInfoFetch(recipeSearchResponse[index].id);
             });
         }
@@ -138,10 +138,7 @@ function getRandomRecipe(){
     // configure recipe API method and parameters
     let query = userRecipeList;
     let AUTH = 'apiKey=47a06039c35d428ab526ad39948d7b16';
-
-    // let NUMBER = 'number=9'; // recipes search number
-    // const uri = 'https://api.spoonacular.com/recipes/complexSearch?query=' + query + '&' + AUTH + '&' + NUMBER;
-    const uri = 'https://api.spoonacular.com/recipes/complexSearch?query=' + query + '&' + AUTH;
+    const uri = 'https://api.spoonacular.com/recipes/random' + query + '&' + AUTH;
 
     fetchData(uri).then(data => {
         // once fetch respond with data then run this code:
@@ -172,8 +169,8 @@ function getRandomRecipe(){
             // Here adding a click event listener to the card
             $(indexClick).on('click', function() {
                 // The click event handling for recipe
-                console.log(`Card ${index + 1} clicked on recipe ${recipeSearchResponse.results[index].title}!`)
-
+                console.log(`Card ${index + 1} clicked, with id ${recipeSearchResponse[index].id} on recipe ${recipeSearchResponse[index].title}!`)
+                // call recipe fetch in relevantrecipe'js to show recipe to user
                 recipeInfoFetch(recipeSearchResponse.results[index].id);
             });
         }
