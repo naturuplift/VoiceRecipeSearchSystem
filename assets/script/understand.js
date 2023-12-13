@@ -47,6 +47,7 @@ fetch(uri, {headers: {Authorization: auth}})
 
         // console.log(userWitSearch.intents[0].name,userWitSearch.entities["dish:dish"][0].body) // TODO to comment when functions working
 
+        // if intent is for a random recipe do this
         if (userWitSearch.intents[0].name === "GetRandomRecipe") {
             // get Intent
             userIntent = userWitSearch.intents[0].name; // TODO delete this
@@ -55,7 +56,8 @@ fetch(uri, {headers: {Authorization: auth}})
             console.log('Wit dish functionality')  // TODO to comment when functions working
             // Understanding state transition to the "recipe search state"
             searchRecipeOptions(userIntent,userRecipe);
-        } else {
+
+        } else { // anithing else use intent GetRecipe
             // get Intent
             userIntent = userWitSearch.intents[0].name; // TODO delete this
             console.log(userIntent)
@@ -67,9 +69,7 @@ fetch(uri, {headers: {Authorization: auth}})
             console.log('Wit dish functionality')  // TODO to comment when functions working
             // Understanding state transition to the "recipe search state"
             searchRecipeOptions(userIntent,userRecipe);
-
         }
-        
     });
 }
 
