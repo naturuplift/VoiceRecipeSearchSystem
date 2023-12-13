@@ -58,7 +58,7 @@ fetch(uri, {headers: {Authorization: auth}})
         } else if (userWitSearch.entities["ingredient:ingredient"] !== 0) {
             console.log('ingredient Wit functionality')
             // Understanding state transition to the "recipe search state"
-        searchRecipeOptions(userIntent,userRecipe);
+        searchRecipeOptions(GetRecipe,userRecipe);
         }
     });
 }

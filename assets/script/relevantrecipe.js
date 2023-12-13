@@ -63,10 +63,9 @@ function recipeInfoFetch(recipeSelected) {
 
         for (let index = 0; index < storedData.length; index++) {
 
-            console.log('I am ${index} loop')
 
             
-            // created card into html and add recipe picture and title
+            // created card into html for previous search and add recipe picture and title
             var recipeCard = `
                 <div class="previous-searches-${index}" id="previous-searches-${index}">
                     <div class="card">
