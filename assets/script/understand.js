@@ -9,7 +9,7 @@ let userWitSearch; // intitialize global Wit variable
 $("#search-btn").click(function () {
 
     // read text input from user
-    var searchInputValue = $('#exampleFormControlTextarea1').val();
+    var searchInputValue = $('.form-control').val();
 
     // check if there is text to search for recipe
     if (searchInputValue.length > 0) {
@@ -41,20 +41,43 @@ fetch(uri, {headers: {Authorization: auth}})
     // That is, turn the message into actionable search query for recipe
     .then(function(data) {
         
-        // console.log(data)  // TODO to comment when functions working
+        console.log(data)  // TODO to comment when functions working
 
         userWitSearch = data; // save Wit result to global variable
 
-        console.log(userWitSearch.intents[0].name,userWitSearch.entities["dish:dish"][0].body) // TODO to comment when functions working
+        // console.log(userWitSearch.intents[0].name,userWitSearch.entities["dish:dish"][0].body) // TODO to comment when functions working
 
-        // get Intent
-        userIntent = userWitSearch.intents[0].name;
-        // get recipe
-        userRecipe = userWitSearch.entities["dish:dish"][0].body;
+        // if intent is for a random recipe do this
+        if (Object.keys(userWitSearch.intents).length !== 0 && userWitSearch.intents[0].name === "GetRandomRecipe") {
+            // get Intent
+            userIntent = userWitSearch.intents[0].name; // TODO delete this
+            console.log(userIntent)
+            userRecipe = 'dummyrecipe'; // this is for random recipe so it doesn't matter
+            console.log('Wit dish functionality')  // TODO to comment when functions working
+            // Understanding state transition to the "recipe search state"
+            searchRecipeOptions(userIntent,userRecipe);
 
-        console.log('dish Wit functionality')  // TODO to comment when functions working
-        // Understanding state transition to the "recipe search state"
-        searchRecipeOptions(userIntent,userRecipe);
+        } else if (Object.keys(userWitSearch.entities).length === 0) { // anything else ask user to input recipe
+
+            let userMessage = 'Not a valid recipe entered. Try Again!';
+            console.log(userMessage)
+            // Display the recognized text on the page
+            $("#exampleFormControlTextarea1").text(userMessage);
+
+        } else if (Object.keys(userWitSearch.entities).length !== 0 && userWitSearch.intents[0].name === "GetRecipe"){ //use intent GetRecipe
+            
+            // get Intent
+            userIntent = userWitSearch.intents[0].name; // TODO delete this
+            console.log(userIntent)
+            
+            // get recipe
+            userRecipe = userWitSearch.entities["dish:dish"][0].body;
+            console.log(userRecipe)
+
+            console.log('Wit dish functionality')  // TODO to comment when functions working
+            // Understanding state transition to the "recipe search state"
+            searchRecipeOptions(userIntent,userRecipe);              
+        }
     });
 }
 

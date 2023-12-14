@@ -38,6 +38,8 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
+      <!-- Nav Bar commented out for future development -->
+<!-- 
       <div class="collapse navbar-collapse container" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
@@ -78,8 +80,8 @@
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
           </li>
-        </ul>
-      </div>
+        </ul> 
+      </div> -->
     </nav>
 
     <div class="jumbotron jumbotron-fluid jumbotronBackground">
@@ -138,12 +140,15 @@
       <!-- Button trigger modal -->
     
     <!--Search Recipe Results-->
-    <div class="row row-cols-1 row-cols-md-2 g-4" id="recipeResultsList">
+    <!-- <div class="title-before-cards my-5 hide"> -->
+    <div class="row row-cols-1 row-cols-md-2 g-4 hide" id="recipeResultsList">
+     
 
       <!-- Generated recipe cards will be appended here -->
 
       
     </div>
+  </div>
     <!--Modify the modal here-->
 
 <div id="result-recipe" class="col-lg-6 col-xxl-4 my-5 mx-auto">
@@ -225,7 +230,7 @@ moved the previous 10 searches to the bottom of the page -->
  -->
     <!--Still working on formatting this, add border-->
     <!--Search Recipe Results-->
-    <div class="previous-searches" id="previous-searches">
+    <div class="previous-searches hide" id="previous-searches">
       <h2>Previous Searches:</h2>
                     
       <button
