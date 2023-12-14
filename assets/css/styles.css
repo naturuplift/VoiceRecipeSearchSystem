@@ -1,3 +1,4 @@
+/* Width, display, margin for class 'logo' */
 .logo {
   width: 300px;
   display: block;
@@ -5,14 +6,13 @@
   margin-right: auto;
 }
 
+/* bg color, padding for class 'jumbotronBackground' */
 .jumbotronBackground {
   background: white;
   padding: 20px;
 }
-.recipeResultsList {
-  padding: 30px;
-}
 
+/* bg, padding for class 'container' */
 .container {
   background: linear-gradient(
     44.8deg,
@@ -22,38 +22,49 @@
   padding: 30px;
 }
 
+/* display for class 'hide' */
 .hide {
   display: none;
 }
 
-h1 {
-  text-align: center;
-}
+/* text align for h1, h2 */
+h1,
 h2 {
   text-align: center;
 }
+
+/* font size for class 'previous-searches-size' */
 .previous-searches-size {
   font-size: small;
 }
 
+/* text align for class 'form-group' */
 .form-group {
   text-align: center;
 }
 
+/* padding for class 'row' */
 .row {
   padding: 15px;
 }
+
+/* display, justify content, align items, padding for class 'col' */
 .col {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 15px;
 }
+
+/* padding, border style & color for class 'recipeResultsList' */
 .recipeResultsList {
   border-style: ridge;
   border-color: rgba(255, 136, 102, 0.67);
+  padding: 30px;
 }
+/* padding for class 'recipeResultsList' */
 
+/* Display, margin, border for class 'recipe-img' */
 .recipe-img {
   display: block;
   margin-left: auto;
@@ -61,40 +72,50 @@ h2 {
   border: 4px solid rgba(255, 136, 102, 0.67);
 }
 
+/* Font size, padding for class 'recipe-details' */
 .recipe-details {
   font-size: 20px;
   padding-top: 10px;
 }
 
+/* Align items, border for class 'card' */
 .card {
   align-items: center;
   border: 2px solid rgba(255, 136, 102, 0.67);
 }
 
+/* Border for class 'recipe-details-box' */
 .recipe-details-box {
   border: 5px solid rgba(255, 136, 102, 0.67);
 }
 
+/* Adds hover & pointer to class 'card' */
 .card:hover {
   cursor: pointer;
   box-shadow: inset 0px 0px 10px rgba(255, 136, 102, 0.67), 0 0 20px rgba(255, 136, 102, 0.67);
 }
 
+/* width, height, align items for class 'card' img */
 .card img {
   width: 250px;
   height: 200px;
   align-items: center;
 }
 
+/* bg repeat, bg size, padding for class 'recipe-details-box' */
 .recipe-details-box {
   background-repeat: no-repeat;
   background-size: cover;
   padding: 100px;
 }
+
+/* color, padding for class 'recipe-title' */
 .recipe-title {
   color: blank;
   padding: 15px;
 }
+
+/* text align, align items, padding, margin, width, height, border for class 'previous-searches' */
 .previous-searches {
   text-align: center;
   align-items: center;
@@ -105,22 +126,14 @@ h2 {
   border: 2px solid rgba(255, 136, 102, 0.67);
 }
 
+/* width, height, align items for class 'previous-searches-img' */
 .previous-searches-img {
   width: 150px;
   height: 100px;
   align-items: center;
 }
 
-.footer {
-  position: absolute;
-  text-align: center;
-  bottom: 0;
-  width: 100%;
-  height: 60px;
-  line-height: 60px;
-  background-color: #f5f5f5;
-}
-
+/* display for ID 'result-recipe' */
 #result-recipe {
   display: none;
 }
