@@ -20,6 +20,7 @@
 The Voice to Recipe Search System is a voice-enabled application aimed to empower users in effortlessly searching for recipes using natural language voice commands.
 Powered by JavaScript, jQuery, Web APIs, DOM manipulation, and Wit.ai for natural language understanding.
 Users can easily engage with the system by articulating their preferences into their device's microphone, specifying ingredients or dish preferences, and promptly receiving personalized recipe suggestions.
+Collaborators of the project: Samantha Allen, Maika Gabriela Saba and Arnaldo Sepulveda
 
 ## Table of Contents
 
@@ -55,31 +56,28 @@ git clone https://github.com/naturuplift/voice-recipe-search-system.git
 
 ```
 
-1.    Open the HTML File:
-        Navigate to the project directory.
-        Open the index.html file in a web browser.
+1. Open the HTML File:
+Navigate to the project directory.
+Open the index.html file in a web browser.
 
-
-2.    Start Voice Search:
-        Click the "Start Voice Search" button.
-        Speak a command like "Find recipes for chicken curry."
+2. Start Voice Search:
+Click the "Start Voice Search" button.
+Speak a command like "Find recipes for chicken curry."
   
 ![Screenshot 23](https://github.com/naturuplift/voice-recipe-search-system/assets/23546356/f67e767d-c732-4c42-ad5f-414dac6ac2d6)
 
 
-4.    View Results:
-        The system will display recognized voice commands and initiate a recipe search.
-        Recipe suggestions will be presented to the user.
+3. View Results:
+The system will display recognized voice commands and initiate a recipe search.
+Recipe suggestions will be presented to the user.
   
 ![Screenshot 22](https://github.com/naturuplift/voice-recipe-search-system/assets/23546356/f4ac2269-0c72-409f-b161-eb832f8e37d1)
 
 
-5.       View Selected Recipe:
-           The system will display the selected recipe with corresponding summary, servings, ingredients and instructions.
+4. View Selected Recipe:
+The system will display the selected recipe with corresponding summary, servings, ingredients and instructions.
      
 ![Screenshot 3](https://github.com/naturuplift/voice-recipe-search-system/assets/23546356/6c378ad7-0de4-43b7-92bc-08b33d57539d)
-
-
 
 ## Technologies Used
 
