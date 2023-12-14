@@ -178,33 +178,6 @@ To create utterances and intents for a recipe search system using Wit.ai, you'll
 || ***Entity: {ingredient}***
 || This intent is used when the user wants recipes based on a specific ingredient they have or want to use. The entity ***{ingredient}*** captures the name of the ingredient.
 
-#### **GetRecipeDetails**
-
-|**Intent:**| **GetRecipeDetails**|
-| ------ | ------ |
-|***Utterances:***
-|| "Tell me more about the recipe for {dish}"
-|| "Details of {dish} recipe"
-|| "What do I need for {dish}?"
-|| "List ingredients for {dish}"
-| ***Explanation:***||
-|| ***Entity: {dish}***
-|| This intent is used when the user wants more details about a specific recipe. The entity ***{dish}*** captures the name of the dish for which the user wants details.
-
-#### **GetHealthyRecipes**
-
-|**Intent:**| **GetHealthyRecipes**|
-| ------ | ------ |
-| ***Utterances:***
-|| "Find me healthy recipes"
-|| "I want to cook something nutritious"
-|| "Healthy meal ideas"
-|| "Suggest me a low-calorie recipe"
-| ***Explanation:***|
-||***Entity: none***
-||This intent is used when the user specifically requests healthy or nutritious recipes. There are no specific entities or roles involved in this case.
-
-
 #### **GetRandomRecipe**
 
 |**Intent:**| **GetRandomRecipe**|
@@ -220,7 +193,8 @@ To create utterances and intents for a recipe search system using Wit.ai, you'll
 
 ## How to Define Search Queries in Spoonacular API
 
-We matched intents extracted by Wit and used API that match in Spoonacular API
+We matched intents extracted by Wit and used API that match in [Spoonacular API][recipe-api]
+
 
 |**Intent:**| **GetRecipe**|
 | ------ | ------ |
@@ -231,17 +205,6 @@ We matched intents extracted by Wit and used API that match in Spoonacular API
 | ------ | ------ |
 |Method  | GET
 | API| https://api.spoonacular.com/recipes/findByIngredients|
-
-|**Intent:**| **GetRecipeDetails**|
-| ------ | ------ |
-|Method  | GET
-| API| https://api.spoonacular.com/recipes/{id}/information|
-
-|**Intent:**| **GetHealthyRecipes**|
-| ------ | ------ |
-|Method  | GET
-| API| https://api.spoonacular.com/recipes/complexSearch|
-|Parameters|Hard-code healthy parameters for the request|
 
 |**Intent:**| **GetRandomRecipe**|
 | ------ | ------ |
@@ -270,4 +233,5 @@ This project is licensed under the MIT License. See the [LICENSE][MIT] file for 
 [state-flow]: <https://github.com/naturuplift/bootcamp-project-one/blob/main/assets/img/Voice%20Language%20Translation%20State%20Diagram%20v2.png>
 [wit-api]: <https://wit.ai/>
 [spoon-api]: <https://spoonacular.com/food-api/docs>
+[recipe-api]: <https://spoonacular.com/food-api/docs>
 [MIT]: <https://github.com/naturuplift/bootcamp-project-one/blob/main/LICENSE>
