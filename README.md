@@ -20,7 +20,8 @@
 The Voice to Recipe Search System is a voice-enabled application aimed to empower users in effortlessly searching for recipes using natural language voice commands.
 Powered by JavaScript, jQuery, Web APIs, DOM manipulation, and Wit.ai for natural language understanding.
 Users can easily engage with the system by articulating their preferences into their device's microphone, specifying ingredients or dish preferences, and promptly receiving personalized recipe suggestions.
-Collaborators of the project: Samantha Allen, Maika Gabriela Saba and Arnaldo Sepulveda
+
+Collaborators of the project: **Samantha Allen**, **Maika Gabriela Saba** and **Arnaldo Sepulveda Espinosa**
 
 ## Table of Contents
 
