@@ -58,14 +58,19 @@ git clone https://github.com/naturuplift/voice-recipe-search-system.git
 1.    Open the HTML File:
         Navigate to the project directory.
         Open the index.html file in a web browser.
+![Screenshot 2023-12-13 211637](https://github.com/naturuplift/voice-recipe-search-system/assets/23546356/fd90f185-819a-4d82-9a01-c6af53785fcc)
 
 2.    Start Voice Search:
         Click the "Start Voice Search" button.
         Speak a command like "Find recipes with ingredient."
+![Screenshot 2023-12-13 211831](https://github.com/naturuplift/voice-recipe-search-system/assets/23546356/a203a6f6-3432-4510-8505-7d000cbef321)
+
 
 3.    View Results:
         The system will display recognized voice commands and initiate a recipe search.
         Recipe suggestions will be presented to the user.
+  ![Screenshot 2023-12-13 212006](https://github.com/naturuplift/voice-recipe-search-system/assets/23546356/ea096e36-5fc3-471e-af41-6a3f62f42df2)
+
 
 ## Technologies Used
 
