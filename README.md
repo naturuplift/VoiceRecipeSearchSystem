@@ -1,4 +1,4 @@
-# Voice Recipe Search System
+# Voice To Recipe Search System
 
 <br/>
 <p align="center">
@@ -17,8 +17,8 @@
 
 ## Description
 
-The Voice Recipe Search System is a voice-enabled application aimed to empower users in effortlessly searching for recipes using natural language voice commands.
-By harnessing advanced technologies such as JavaScript, jQuery, Web APIs, DOM manipulation, and Wit.ai for natural language understanding, the system provides a seamless and interactive recipe search experience.
+The Voice to Recipe Search System is a voice-enabled application aimed to empower users in effortlessly searching for recipes using natural language voice commands.
+Powered by JavaScript, jQuery, Web APIs, DOM manipulation, and Wit.ai for natural language understanding.
 Users can easily engage with the system by articulating their preferences into their device's microphone, specifying ingredients or dish preferences, and promptly receiving personalized recipe suggestions.
 
 ## Table of Contents
@@ -40,17 +40,17 @@ Users can easily engage with the system by articulating their preferences into t
 - **Natural Language Processing:** Employs natural language processing techniques to interpret user intent for input and extract relevant information.
 - **Recipe Search:** Integrates with a recipe database or API to perform real-time recipe searches based on interpreted request.
 - **User-friendly Interface:** Provides a simple and intuitive interface for a seamless user experience.
-
+- **Multiple Recipe Options:** Choose from various recipes effortlessly.
 
 
 ## Usage
 
-You can simply visit the link [https://github.com/YOUR_USERNAME/voice-recipe-search-system.git][project-app].
+You can simply visit the link [https://naturuplift.github.io/voice-recipe-search-system/][project-app].
 
 Another option is to clone the repository to your local machine and open the `index.html` file in a web browser.
 
 ```
-git clone https://github.com/YOUR_USERNAME/voice-recipe-search-system.git
+git clone https://github.com/naturuplift/voice-recipe-search-system.git
 # Additional installation steps, dependencies, etc.
 
 ```
@@ -252,7 +252,7 @@ Contributions are welcome! If you'd like to contribute to the project, follow th
 
 This project is licensed under the MIT License. See the [LICENSE][MIT] file for details.
 
-[project-app]: <>
+[project-app]: <https://naturuplift.github.io/voice-recipe-search-system/>
 [project-code]: <https://github.com/naturuplift/bootcamp-project-one/blob/main/index.html>
 [state-flow]: <https://github.com/naturuplift/bootcamp-project-one/blob/main/assets/img/Voice%20Language%20Translation%20State%20Diagram%20v2.png>
 [wit-api]: <https://wit.ai/>
