@@ -68,8 +68,7 @@ git clone https://github.com/naturuplift/voice-recipe-search-system.git
 4.    View Results:
         The system will display recognized voice commands and initiate a recipe search.
         Recipe suggestions will be presented to the user.
-![Screenshot 2](https://github.com/naturuplift/voice-recipe-search-system/assets/23546356/fa0cf709-7555-479b-86f0-f9feb76d20e8)
-
+![Screenshot 22](https://github.com/naturuplift/voice-recipe-search-system/assets/23546356/f4ac2269-0c72-409f-b161-eb832f8e37d1)
 
 5.       View Selected Recipe:
            The system will display the selected recipe with corresponding summary, servings, ingredients and instructions.
