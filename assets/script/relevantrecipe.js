@@ -11,7 +11,7 @@ function recipeInfoFetch(recipeSelected) {
   console.log(recipeSelected);  // TODO comment when no longer needed
   //insert id from local storage
   let queryId = recipeSelected;
-  let AUTH = "apiKey=8ed9b997410c46de90674787041efc93";
+  let AUTH = "apiKey=9cf7f51e45f542c98bb4360739b56ced";
 
   const requestUrl = "https://api.spoonacular.com/recipes/" + queryId + "/information?" + AUTH;
 
@@ -48,6 +48,8 @@ function recipeInfoFetch(recipeSelected) {
 
     // console.log(ingredientRecipe) // TODO comment when confirm that gets correct ingredients
     $('.previous-searches').removeClass('hide');
+    // $('.title-before-cards').addClass('hide');
+
     // create html element for recipe selected with
     // title, image, summary, servings, ingredients and instructions
     let recipeShow = `

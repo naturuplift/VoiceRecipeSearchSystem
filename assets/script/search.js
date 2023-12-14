@@ -35,7 +35,7 @@ function getRecipeList(userRecipeList){
 
     // configure recipe API method and parameters
     let query = userRecipeList;
-    let AUTH = 'apiKey=8ed9b997410c46de90674787041efc93';
+    let AUTH = 'apiKey=9cf7f51e45f542c98bb4360739b56ced';
     const uri = 'https://api.spoonacular.com/recipes/complexSearch?query=' + query + '&' + AUTH;
 
     fetchData(uri).then(data => {
@@ -47,6 +47,10 @@ function getRecipeList(userRecipeList){
         // Store data in local storage
         localStorage.setItem('recipeData', JSON.stringify(recipeSearchResponse.results));
         $('#recipeResultsList').removeClass('hide');
+
+        // let tilteRecipesFound = `<h2 class="card-title">Recipes Found</h2>`;
+        // $(".title-before-cards").removeClass('hide');
+        // $(".title-before-cards").prepend(tilteRecipesFound);
 
         for (let index = 0; index < recipeSearchResponse.results.length; index++) {
 
@@ -91,7 +95,7 @@ function getRecipeByIngredients(userIngredientsList){
     // configure recipe API method and parameters
     let recipeIngredients = userIngredientsList;
     let recipeParameters = 'fillIngredients=false&ignorePantry=true';
-    let AUTH = 'apiKey=8ed9b997410c46de90674787041efc93';
+    let AUTH = 'apiKey=9cf7f51e45f542c98bb4360739b56ced';
     const uri = 'https://api.spoonacular.com/recipes/findByIngredients?' + AUTH + '&' + 'ingredients=' + recipeIngredients + '&' + recipeParameters;
 
     // console.log(uri)
@@ -102,7 +106,7 @@ function getRecipeByIngredients(userIngredientsList){
         console.log(data);
 
         // Store data in local storage
-        localStorage.setItem('recipeByIngredientData', JSON.stringify(recipeSearchResponse));
+        localStorage.setItem('recipeData', JSON.stringify(recipeSearchResponse));
 
         for (let index = 0; index < recipeSearchResponse.length; index++) {
 
@@ -138,7 +142,7 @@ function getRandomRecipe(){
 
     // configure recipe API method and parameters
     let number = 'number=6';
-    let AUTH = 'apiKey=8ed9b997410c46de90674787041efc93';
+    let AUTH = 'apiKey=9cf7f51e45f542c98bb4360739b56ced';
     const uri = 'https://api.spoonacular.com/recipes/random?' + AUTH + '&' + number;
 
     fetchData(uri).then(data => {
@@ -179,7 +183,7 @@ function getRandomRecipe(){
             `;
 
             $("#recipeResultsList").append(recipeCard);
-
+            
             let indexClick = `.recipe-${index}`;
             // Here adding a click event listener to the card
             $(indexClick).on('click', function() {
