@@ -213,7 +213,7 @@ We matched intents extracted by Wit and used API that match in [Spoonacular API]
 
 ## State Flow Diagram
 
-For a visual representation of the sequence of actions involved in the Voice Language Translation System, refer to the [State Flow Diagram][state-flow] provided in the project documentation.
+For a visual representation of the sequence of actions involved in the [Voice Language Translation System][voice-system], refer to the [State Flow Diagram][state-flow] provided in the project documentation.
 
 ## Contributing
 
@@ -231,6 +231,7 @@ This project is licensed under the MIT License. See the [LICENSE][MIT] file for 
 [project-app]: <https://naturuplift.github.io/voice-recipe-search-system/>
 [project-code]: <https://github.com/naturuplift/bootcamp-project-one/blob/main/index.html>
 [state-flow]: <https://github.com/naturuplift/bootcamp-project-one/blob/main/assets/img/Voice%20Language%20Translation%20State%20Diagram%20v2.png>
+[voice-system]: <https://github.com/naturuplift/voice-recipe-search-system/blob/main/assets/img/State%20Diagram%20Recipe%20Search%20v1.png>
 [wit-api]: <https://wit.ai/>
 [spoon-api]: <https://spoonacular.com/food-api/docs>
 [recipe-api]: <https://spoonacular.com/food-api/docs>
