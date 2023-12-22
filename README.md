@@ -25,16 +25,15 @@ Collaborators of the project: **Samantha Allen**, **Maika Gabriela Saba** and **
 
 ## Table of Contents
 
-- [Installation](#installation)
 - [Features](#features)
 - [Usage](#usage)
 - [Technologies Used](#technologies-used)
 - [Steps to build Recipe Intent Recognition](#steps-to-build-recipe-intent-recognition)
+- [Explanation of Wit.ai Concepts of Intents, Entities and Traits](#explanation-of-wit.ai-concepts-of-intents-entities-and-traits)
+- [How to Define Search Queries in Spoonacular API](#how-to-define-search-queries-in-spoonacular-api)
 - [State Flow Diagram](#state_flow_diagram)
 - [Contributing](#contributing)
 - [License](#license)
-
-
 
 ## Features
 
@@ -43,7 +42,6 @@ Collaborators of the project: **Samantha Allen**, **Maika Gabriela Saba** and **
 - **Recipe Search:** Integrates with a recipe database or API to perform real-time recipe searches based on interpreted request.
 - **User-friendly Interface:** Provides a simple and intuitive interface for a seamless user experience.
 - **Multiple Recipe Options:** Choose from various recipes effortlessly.
-
 
 ## Usage
 
