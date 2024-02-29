@@ -45,7 +45,7 @@ Collaborators of the project: **Samantha Allen**, **Maika Gabriela Saba** and **
 
 ## Usage
 
-You can simply visit the link [https://naturuplift.github.io/voice-recipe-search-system/][project-app].
+You can simply visit the link [https://naturuplift.github.io/VoiceRecipeSearchSystem/][project-app].
 
 Another option is to clone the repository to your local machine and open the `index.html` file in a web browser.
 
@@ -231,7 +231,7 @@ Contributions are welcome! If you'd like to contribute to the project, follow th
 
 This project is licensed under the MIT License. See the [LICENSE][MIT] file for details.
 
-[project-app]: <https://naturuplift.github.io/voice-recipe-search-system/>
+[project-app]: <https://naturuplift.github.io/VoiceRecipeSearchSystem/>
 [project-code]: <https://github.com/naturuplift/bootcamp-project-one/blob/main/index.html>
 [state-flow]: <https://github.com/naturuplift/bootcamp-project-one/blob/main/assets/img/Voice%20Language%20Translation%20State%20Diagram%20v2.png>
 [voice-system]: <https://github.com/naturuplift/voice-recipe-search-system/blob/main/assets/img/State%20Diagram%20Recipe%20Search%20v1.png>
